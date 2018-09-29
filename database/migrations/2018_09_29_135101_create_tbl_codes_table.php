@@ -14,9 +14,10 @@ class CreateTblCodesTable extends Migration
     public function up()
     {
         Schema::create('tbl_codes', function (Blueprint $table) {
-            $table->text('kode_qr');
+            $table->string('kode_qr');
             $table->integer('valid_until');
             $table->timestamps();
+            $table->primary('kode_qr');
         });
     }
 

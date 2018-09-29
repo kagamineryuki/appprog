@@ -17,7 +17,7 @@ class CreateTblStudentsTable extends Migration
             $table->string('nisn');
             $table->text('nama');
             $table->boolean('isAdmin');
-
+            $table->primary('nisn');
         });
     }
 

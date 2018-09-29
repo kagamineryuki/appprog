@@ -17,6 +17,7 @@ class CreateTblAdminsTable extends Migration
             $table->string('no_pegawai');
             $table->text('nama');
             $table->boolean('isAdmin');
+            $table->primary('no_pegawai');
         });
     }
 

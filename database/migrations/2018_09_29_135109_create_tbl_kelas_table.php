@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTblPelajaransTable extends Migration
+class CreateTblKelasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateTblPelajaransTable extends Migration
      */
     public function up()
     {
-        Schema::create('tbl_pelajarans', function (Blueprint $table) {
-            $table->string('kode_pelajaran');
-            $table->text('nama_pelajaran');
-            $table->primary('kode_pelajaran');
+        Schema::create('tbl_kelas', function (Blueprint $table) {
+            $table->string('kode_kelas');
+            $table->text('nama_kelas');
+            $table->primary('kode_kelas');
         });
     }
 
@@ -27,6 +27,6 @@ class CreateTblPelajaransTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tbl_pelajarans');
+        Schema::dropIfExists('tbl_kelas');
     }
 }

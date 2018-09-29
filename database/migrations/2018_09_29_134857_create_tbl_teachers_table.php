@@ -17,7 +17,7 @@ class CreateTblTeachersTable extends Migration
             $table->string('nign');
             $table->text('nama');
             $table->boolean('isAdmin');
-
+            $table->primary('nign');
         });
     }
 
