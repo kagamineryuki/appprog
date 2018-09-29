@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/teacher/dashboard', function () {
+   return view('teacher.dashboard');
+});
