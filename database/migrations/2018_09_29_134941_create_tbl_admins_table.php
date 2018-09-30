@@ -16,6 +16,7 @@ class CreateTblAdminsTable extends Migration
         Schema::create('tbl_admins', function (Blueprint $table) {
             $table->string('no_pegawai')->unique();
             $table->text('nama');
+            $table->text('password');
             $table->boolean('isAdmin');
             $table->primary('no_pegawai');
         });
