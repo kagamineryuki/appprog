@@ -16,6 +16,7 @@ class CreateTblStudentsTable extends Migration
         Schema::create('tbl_students', function (Blueprint $table) {
             $table->string('nisn')->unique();
             $table->text('nama');
+            $table->text('password');
             $table->boolean('isAdmin');
             $table->primary('nisn');
         });
