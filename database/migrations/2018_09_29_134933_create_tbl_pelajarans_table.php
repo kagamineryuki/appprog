@@ -14,7 +14,7 @@ class CreateTblPelajaransTable extends Migration
     public function up()
     {
         Schema::create('tbl_pelajarans', function (Blueprint $table) {
-            $table->string('kode_pelajaran');
+            $table->string('kode_pelajaran')->unique();
             $table->text('nama_pelajaran');
             $table->primary('kode_pelajaran');
         });

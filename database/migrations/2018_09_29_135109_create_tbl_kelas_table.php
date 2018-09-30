@@ -14,7 +14,7 @@ class CreateTblKelasTable extends Migration
     public function up()
     {
         Schema::create('tbl_kelas', function (Blueprint $table) {
-            $table->string('kode_kelas');
+            $table->string('kode_kelas')->unique();
             $table->text('nama_kelas');
             $table->primary('kode_kelas');
         });

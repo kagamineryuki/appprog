@@ -14,7 +14,7 @@ class CreateTblAdminsTable extends Migration
     public function up()
     {
         Schema::create('tbl_admins', function (Blueprint $table) {
-            $table->string('no_pegawai');
+            $table->string('no_pegawai')->unique();
             $table->text('nama');
             $table->boolean('isAdmin');
             $table->primary('no_pegawai');
