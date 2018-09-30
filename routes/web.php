@@ -16,3 +16,4 @@ Route::get('/', function () {
 });
 
 Route::get('/teacher/dashboard', ['uses' => 'teacher@dashboard']);
+Route::resource('login','login');
