@@ -31,6 +31,7 @@ return array(
     'App\\tblAbsensi' => $baseDir . '/app/tblAbsensi.php',
     'App\\tblAdmin' => $baseDir . '/app/tblAdmin.php',
     'App\\tblCode' => $baseDir . '/app/tblCode.php',
+    'App\\tblIjin' => $baseDir . '/app/tblIjin.php',
     'App\\tblKelas' => $baseDir . '/app/tblKelas.php',
     'App\\tblPelajaran' => $baseDir . '/app/tblPelajaran.php',
     'App\\tblStudent' => $baseDir . '/app/tblStudent.php',
