@@ -11,9 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', array('uses' => 'login@show_login'));
+
+Route::post('login',array('uses' => 'login@process_login'));
 
 Route::get('/teacher/dashboard', ['uses' => 'teacher@dashboard']);
-Route::resource('login','login');
