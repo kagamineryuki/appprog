@@ -358,6 +358,7 @@ class ComposerStaticInit7f212ae8bbf151cdcf1f8a826242a889
         'App\\tblAbsensi' => __DIR__ . '/../..' . '/app/tblAbsensi.php',
         'App\\tblAdmin' => __DIR__ . '/../..' . '/app/tblAdmin.php',
         'App\\tblCode' => __DIR__ . '/../..' . '/app/tblCode.php',
+        'App\\tblIjin' => __DIR__ . '/../..' . '/app/tblIjin.php',
         'App\\tblKelas' => __DIR__ . '/../..' . '/app/tblKelas.php',
         'App\\tblPelajaran' => __DIR__ . '/../..' . '/app/tblPelajaran.php',
         'App\\tblStudent' => __DIR__ . '/../..' . '/app/tblStudent.php',
