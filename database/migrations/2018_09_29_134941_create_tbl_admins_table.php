@@ -19,6 +19,7 @@ class CreateTblAdminsTable extends Migration
             $table->text('password');
             $table->boolean('isAdmin');
             $table->primary('no_pegawai');
+            $table->rememberToken();
         });
     }
 

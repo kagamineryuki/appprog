@@ -11,12 +11,17 @@
 |
 */
 
+//show login for student,teacher,admin
 Route::get('/', array('uses' => 'login@show_login'));
+Route::get('/admin', array('uses' => 'admin@show_login'));
 
-Route::get('/teacher/dashboard', ['uses' => 'teacher@dashboard']);
+Route::middleware(['admin_login_check'])->group(function () {
+    Route::get('/admin/admin_dashboard/create_user', array('uses' => 'admin@show_create_user_page'));
+    Route::get('/admin/admin_dashboard', array('uses' => 'admin@show_dashboard'));
+    Route::post('/admin/admin_dashboard/create_user/proceed', array('uses' => 'admin@do_create_user'))->name('register');
+    Route::get('/admin/admin_dashboard/logout', array('uses' => 'admin@do_logout'));
+});
 
-Route::get('/admin/create_user', ['uses' => 'admin@show_register']);
-
-Route::post('/admin/create_user', ['uses' => 'register@do_register'])->name('register');
-
+//submit form to controller
 Route::post('login',array('uses' => 'login@process_login'));
+Route::post('/admin/login', array('uses' => 'admin@do_login'))->name('admin_login');

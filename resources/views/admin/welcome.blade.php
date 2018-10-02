@@ -8,9 +8,10 @@
 @section('content')
     <div id="welcome-bg" class="d-flex justify-content-center align-items-center">
         <div>
-            <h1 class="display-3 text-light">{{config('app.name')}}</h1>
+            <h1 class="display-3 text-light mb-1">{{config('app.name')}}</h1>
+            <p class="h5 text-light text-center mb-3">Administrator</p>
 
-            <form method="POST" action="./login">
+            <form method="POST" action="./admin/login">
                 {{csrf_field()}}
 
                 <div class="form-group mb-3">
@@ -28,19 +29,11 @@
                         </div>
                     @endif
                 </div>
-
-                <div class="form-inline d-flex justify-content-around mb-3">
-                    <div class="form-group">
-                        <input type="radio" name="user_type" class="form-control form-control-lg mr-1" value="student">
-                        <label class="text-light"><strong>Student</strong></label>
+                <div class="d-flex justify-content-around">
+                    <div class="form-inline mr-4">
+                        <input type="checkbox" class="form-control form-check" name="remember">
+                        <label class="text-light"><strong>Remember Me</strong></label>
                     </div>
-
-                    <div class="form-group">
-                        <input type="radio" name="user_type" class="form-control form-control-lg mr-1" value="teacher">
-                        <label class="text-light"><strong>Teacher</strong></label>
-                    </div>
-                </div>
-                <div class="d-flex">
                     <input type="submit" class="btn btn-primary flex-fill">
                 </div>
             </form>

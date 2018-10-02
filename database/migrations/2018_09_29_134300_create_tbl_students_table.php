@@ -19,6 +19,7 @@ class CreateTblStudentsTable extends Migration
             $table->text('password');
             $table->boolean('isAdmin');
             $table->primary('nisn');
+            $table->rememberToken();
         });
     }
 

@@ -19,6 +19,7 @@ class CreateTblTeachersTable extends Migration
             $table->text('password');
             $table->boolean('isAdmin');
             $table->primary('nign');
+            $table->rememberToken();
         });
     }
 
