@@ -31,7 +31,7 @@
                 </div>
                 <div class="d-flex justify-content-around">
                     <div class="form-inline mr-4">
-                        <input type="checkbox" class="form-control form-check" name="remember">
+                        <input type="checkbox" class="form-check-input" name="remember">
                         <label class="text-light"><strong>Remember Me</strong></label>
                     </div>
                     <input type="submit" class="btn btn-primary flex-fill">

@@ -12,8 +12,14 @@
 */
 
 //show login for student,teacher,admin
-Route::get('/', array('uses' => 'login@show_login'));
 Route::get('/admin', array('uses' => 'admin@show_login'));
+Route::get('/', array('uses' => 'login@show_login'));
+
+Route::middleware(['user_login'])->group(function() {
+    Route::get('/student_dashboard/logout', array('uses' => 'login@process_logout'));
+    Route::get('/student_dashboard', array('uses' => 'login@show_student_dashboard'));
+    Route::get('/teacher/dashboard', array('uses' => 'teacher@dashboard'));
+});
 
 Route::middleware(['admin_login_check'])->group(function () {
     Route::get('/admin/admin_dashboard/create_user', array('uses' => 'admin@show_create_user_page'));

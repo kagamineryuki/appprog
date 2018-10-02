@@ -10,4 +10,5 @@ class tblStudent extends Authenticatable
     protected $primaryKey = 'nisn';
     protected $guard = 'student';
     public $timestamps = false;
+    public $incrementing = false;
 }

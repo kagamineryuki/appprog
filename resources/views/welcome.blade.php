@@ -31,7 +31,7 @@
 
                 <div class="form-inline d-flex justify-content-around mb-3">
                     <div class="form-group">
-                        <input type="radio" name="user_type" class="form-control form-control-lg mr-1" value="student">
+                        <input type="radio" name="user_type" class="form-control form-control-lg mr-1" value="student" checked>
                         <label class="text-light"><strong>Student</strong></label>
                     </div>
 
@@ -41,6 +41,10 @@
                     </div>
                 </div>
                 <div class="d-flex">
+                    <div class="form-inline mr-4">
+                        <input type="checkbox" class="form-check-input" name="remember">
+                        <label class="text-light"><strong>Remember Me</strong></label>
+                    </div>
                     <input type="submit" class="btn btn-primary flex-fill">
                 </div>
             </form>
