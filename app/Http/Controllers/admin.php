@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\tblTeacher;
 use App\tblStudent;
+use App\tblPelajaran;
+use App\tblKelas;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -47,14 +49,21 @@ class admin extends Controller
     }
 
     public function show_dashboard(){
-        return view('admin.admin_dashboard');
+        $student = DB::table('tbl_students')->select('nisn','nama')->get();
+        $teacher = DB::table('tbl_teachers')->select('nign','nama')->get();
+        $pelajaran = DB::table('tbl_pelajarans')->select('kode_pelajaran','nama_pelajaran')->get();
+        $kelas = DB::table('tbl_kelas')->select('kode_kelas','nama_kelas')->get();
+
+        return view('admin.admin_dashboard')->with(['students'=>$student,'teachers'=>$teacher,'pelajaran'=>$pelajaran,'kelas'=>$kelas]);
     }
 
     public function show_create_user_page(){
         $student = DB::table('tbl_students')->select('nisn','nama')->get();
         $teacher = DB::table('tbl_teachers')->select('nign','nama')->get();
+        $pelajaran = DB::table('tbl_pelajarans')->select('kode_pelajaran','nama_pelajaran')->get();
+        $kelas = DB::table('tbl_kelas')->select('kode_kelas','nama_kelas')->get();
 
-        return view('admin.create_user')->with(['students'=>$student,'teachers'=>$teacher]);
+        return view('admin.create_user')->with(['students'=>$student,'teachers'=>$teacher,'pelajaran'=>$pelajaran,'kelas'=>$kelas]);
     }
 
     public function do_create_user(Request $request){
@@ -113,5 +122,48 @@ class admin extends Controller
                 break;
         }
 
+    }
+
+    public function do_create_pelajaran(Request $request){
+        $rules = [
+            'kode_pelajaran' => 'required|unique:tbl_pelajarans',
+            'nama_pelajaran' => 'required|min:3'
+        ];
+
+        $validator = Validator::make($request->all(),$rules);
+
+        if($validator->fails()){
+            return redirect('/admin/admin_dashboard/create_user')
+                ->withErrors($validator)
+                ->withInput();
+        }else {
+            $pelajaran = new tblPelajaran();
+            $pelajaran->kode_pelajaran = $request->kode_pelajaran;
+            $pelajaran->nama_pelajaran = $request->nama_pelajaran;
+            $pelajaran->save();
+
+            return redirect('/admin/admin_dashboard/create_user');
+        }
+    }
+
+    public function do_create_kelas(Request $request){
+        $rules = [
+            'kode_kelas' => 'required|unique:tbl_kelas',
+            'nama_kelas' => 'required|min:3'
+        ];
+
+        $validator = Validator::make($request->all(),$rules);
+
+        if($validator->fails()){
+            return redirect('/admin/admin_dashboard/create_user')
+                ->withErrors($validator)
+                ->withInput();
+        }else {
+            $kelas = new tblKelas();
+            $kelas->kode_kelas = $request->kode_kelas;
+            $kelas->nama_kelas = $request->nama_kelas;
+            $kelas->save();
+        }
+        return redirect('/admin/admin_dashboard/create_user');
     }
 }

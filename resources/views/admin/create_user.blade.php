@@ -9,87 +9,192 @@
 @section('content-div')
 
     <div class="bg-white container-fluid align-items-stretch p-4" id="contents-dashboard">
-        <h1 class="display-4">Create User</h1>
-        <form method="POST" action="{{route('register')}}">
-            {{csrf_field()}}
-            <div class="form-group mb-3">
-                <label class="mr-3"><strong>NISN / NIGN</strong></label>
-                <input type="text" class="form-control col-5 is-invalid" name="username" value="{{old('username')}}">
-                <div class="invalid-feedback">
-                    @if($errors->has('username'))
-                        <p class="text-danger">{{$errors->first('username')}}</p>
-                    @endif
-                </div>
-            </div>
-            <div class="form-group mb-3">
-                <label class="mr-3"><strong>Nama</strong></label>
-                <input type="text" class="form-control col-5 is-invalid" value="{{old('nama')}}" name="nama">
-                <div class="invalid-feedback">
-                    @if($errors->has('nama'))
-                        <p class="text-danger">{{$errors->first('nama')}}</p>
-                    @endif
-                </div>
-            </div>
-            <div class="form-group mb-3">
-                <label class="mr-3"><strong>Password</strong></label>
-                <input type="password" class="form-control col-5 is-invalid" name="password">
-                <div class="invalid-feedback">
-                    @if($errors->has('password'))
-                        <p class="text-danger">{{$errors->first('password')}}</p>
-                    @endif
-                </div>
-            </div>
-
-            <div class="form-inline mb-3">
-                <input type="radio" name="user_type" value="student" class="form-control mr-3" checked>
-                <label class="mr-5"><strong>Student</strong></label>
-                <input type="radio" name="user_type" value="teacher" class="form-control mr-3">
-                <label><strong>Teacher</strong></label>
-            </div>
-
-            <input type="submit" class="btn btn-primary">
-        </form>
+        <h1 class="display-4">Create Data</h1>
         <hr>
-        <div class="d-flex justify-content-around">
-            <div>
-                <h1 class="display-4">Students</h1>
-                <table class="table table-striped table-bordered">
-                    <thead class="thead-dark">
-                    <tr>
-                        <th scope="col">NISN</th>
-                        <th scope="col">Nama</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    @foreach($students as $student)
-                        <tr>
-                            <td>{{$student->nisn}}</td>
-                            <td>{{$student->nama}}</td>
-                        </tr>
-                    @endforeach
-                    </tbody>
-                </table>
-            </div>
-            <div>
-                <h1 class="display-4">Teacher</h1>
-                <table class="table table-striped table-bordered">
-                    <thead class="thead-dark">
-                    <tr>
-                        <th scope="col">NIGN</th>
-                        <th scope="col">Nama</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    @foreach($teachers as $teacher)
-                        <tr>
-                            <td>{{$teacher->nign}}</td>
-                            <td>{{$teacher->nama}}</td>
-                        </tr>
-                    @endforeach
-                    </tbody>
-                </table>
-            </div>
+        <div class="d-flex">
+            <div class="container">
+                <h1 class="display-4">User</h1>
+                <form method="POST" action="/admin/admin_dashboard/create_user/proceed/create_user">
+                    {{csrf_field()}}
+                    <div class="form-group mb-3">
+                        <label class="mr-3"><strong>NISN / NIGN</strong></label>
+                        <input type="text" class="form-control is-invalid" name="username"
+                               value="{{old('username')}}">
+                        <div class="invalid-feedback">
+                            @if($errors->has('username'))
+                                <p class="text-danger">{{$errors->first('username')}}</p>
+                            @endif
+                        </div>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label class="mr-3"><strong>Nama</strong></label>
+                        <input type="text" class="form-control is-invalid" value="{{old('nama')}}" name="nama">
+                        <div class="invalid-feedback">
+                            @if($errors->has('nama'))
+                                <p class="text-danger">{{$errors->first('nama')}}</p>
+                            @endif
+                        </div>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label class="mr-3"><strong>Password</strong></label>
+                        <input type="password" class="form-control is-invalid" name="password">
+                        <div class="invalid-feedback">
+                            @if($errors->has('password'))
+                                <p class="text-danger">{{$errors->first('password')}}</p>
+                            @endif
+                        </div>
+                    </div>
 
+                    <div class="form-inline mb-3">
+                        <input type="radio" name="user_type" value="student" class="form-control mr-3" checked>
+                        <label class="mr-5"><strong>Student</strong></label>
+                        <input type="radio" name="user_type" value="teacher" class="form-control mr-3">
+                        <label><strong>Teacher</strong></label>
+                    </div>
+
+                    <input type="submit" class="btn btn-primary">
+                </form>
+            </div>
+            <div class="d-flex container">
+                <div class="mr-5">
+                    <h1 class="display-4">Students</h1>
+                    <table class="table table-striped table-bordered">
+                        <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">NISN</th>
+                            <th scope="col">Nama</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @foreach($students as $student)
+                            <tr>
+                                <td>{{$student->nisn}}</td>
+                                <td>{{$student->nama}}</td>
+                            </tr>
+                        @endforeach
+                        </tbody>
+                    </table>
+                </div>
+                <div>
+                    <div>
+                        <h1 class="display-4">Teacher</h1>
+                        <table class="table table-striped table-bordered">
+                            <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">NIGN</th>
+                                <th scope="col">Nama</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @foreach($teachers as $teacher)
+                                <tr>
+                                    <td>{{$teacher->nign}}</td>
+                                    <td>{{$teacher->nama}}</td>
+                                </tr>
+                            @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="d-flex">
+            <div class="container">
+                <h1 class="display-4">Pelajaran</h1>
+                <form method="POST" action="/admin/admin_dashboard/create_user/proceed/create_pelajaran">
+                    {{csrf_field()}}
+                    <div class="form-group mb-3">
+                        <label class="mr-3"><strong>Kode Pelajaran</strong></label>
+                        <input type="text" class="form-control is-invalid" value="{{old('kode_pelajaran')}}"
+                               name="kode_pelajaran">
+                        <div class="invalid-feedback">
+                            @if($errors->has('kode_pelajaran'))
+                                <p class="text-danger">{{$errors->first('kode_pelajaran')}}</p>
+                            @endif
+                        </div>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label class="mr-3"><strong>Nama Pelajaran</strong></label>
+                        <input type="text" class="form-control is-invalid" value="{{old('nama_pelajaran')}}"
+                               name="nama_pelajaran">
+                        <div class="invalid-feedback">
+                            @if($errors->has('nama_pelajaran'))
+                                <p class="text-danger">{{$errors->first('nama_pelajaran')}}</p>
+                            @endif
+                        </div>
+                    </div>
+
+                    <input type="submit" class="btn btn-primary">
+                </form>
+            </div>
+            <div class="container">
+                <table class="table table-striped table-bordered">
+                    <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Kode Pelajaran</th>
+                        <th scope="col">Nama Pelajaran</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach($pelajaran as $pelajaran)
+                        <tr>
+                            <td>{{$pelajaran->kode_pelajaran}}</td>
+                            <td>{{$pelajaran->nama_pelajaran}}</td>
+                        </tr>
+                    @endforeach
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+        <hr>
+        <div class="d-flex">
+            <div class="container">
+                <h1 class="display-4">Kelas</h1>
+                <form method="POST" action="/admin/admin_dashboard/create_user/proceed/create_kelas">
+                    {{csrf_field()}}
+                    <div class="form-group mb-3">
+                        <label class="mr-3"><strong>Kode Kelas</strong></label>
+                        <input type="text" class="form-control is-invalid" value="{{old('kode_kelas')}}"
+                               name="kode_kelas">
+                        <div class="invalid-feedback">
+                            @if($errors->has('kode_kelas'))
+                                <p class="text-danger">{{$errors->first('kode_kelas')}}</p>
+                            @endif
+                        </div>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label class="mr-3"><strong>Nama Kelas</strong></label>
+                        <input type="text" class="form-control  is-invalid" value="{{old('nama_kelas')}}" name="nama_kelas">
+                        <div class="invalid-feedback">
+                            @if($errors->has('nama_kelas'))
+                                <p class="text-danger">{{$errors->first('nama_kelas')}}</p>
+                            @endif
+                        </div>
+                    </div>
+
+                    <input type="submit" class="btn btn-primary">
+                </form>
+            </div>
+            <div class="container">
+                <table class="table table-striped table-bordered">
+                    <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Kode Kelas</th>
+                        <th scope="col">Nama Kelas</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach($kelas as $kelas)
+                        <tr>
+                            <td>{{$kelas->kode_kelas}}</td>
+                            <td>{{$kelas->nama_kelas}}</td>
+                        </tr>
+                    @endforeach
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 

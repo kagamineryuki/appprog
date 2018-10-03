@@ -31,8 +31,11 @@ Route::group(['middleware' => ['user_login:student'] ], function() {
 Route::middleware(['user_login:admin'])->group(function () {
     Route::get('/admin/admin_dashboard/create_user', array('uses' => 'admin@show_create_user_page'));
     Route::get('/admin/admin_dashboard', array('uses' => 'admin@show_dashboard'));
-    Route::post('/admin/admin_dashboard/create_user/proceed', array('uses' => 'admin@do_create_user'))->name('register');
     Route::get('/admin/admin_dashboard/logout', array('uses' => 'admin@do_logout'));
+
+    Route::post('/admin/admin_dashboard/create_user/proceed/create_kelas', array('uses' => 'admin@do_create_kelas'));
+    Route::post('/admin/admin_dashboard/create_user/proceed/create_user', array('uses' => 'admin@do_create_user'));
+    Route::post('/admin/admin_dashboard/create_user/proceed/create_pelajaran', array('uses' => 'admin@do_create_pelajaran'));
 });
 
 //submit form to controller
