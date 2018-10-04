@@ -18,10 +18,13 @@ Route::get('/', array('uses' => 'login@show_login'));
 //teacher
 Route::group(['middleware' => ['user_login:teacher']], function() {
     Route::get('/teacher/teacher_dashboard', array('uses' => 'teacher@show_dashboard'));
+    Route::get('/teacher/teacher_dashboard/generate_qr_code', array('uses' => 'teacher@show_generate_qr_code'));
+    Route::post('/teacher/teacher_dashboard/generate_qr_code/proceed', array('uses' => 'teacher@generate_qr'));
+    Route::get('/teacher/teacher_dashboard/history', array('uses' => 'teacher@show_history'));
     Route::get('/teacher/teacher_dashboard/logout', array('uses' => 'teacher@do_logout'));
 });
 
-//student & teacher
+//student
 Route::group(['middleware' => ['user_login:student'] ], function() {
     Route::get('/student_dashboard/logout', array('uses' => 'login@process_logout'));
     Route::get('/student_dashboard', array('uses' => 'login@show_student_dashboard'));
