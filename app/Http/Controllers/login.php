@@ -44,7 +44,7 @@ class login extends Controller
                     );
 
                     if (Auth::guard('student')->attempt($userdata, $request->remember)){
-                        return redirect('/student_dashboard');
+                        return redirect('/student/student_dashboard');
                     } else {
                         return redirect('/');
                     }
@@ -67,12 +67,7 @@ class login extends Controller
     }
 
     public function process_logout(){
-        if (auth()->guard('student')->check()){
-            auth()->guard('student')->logout();
-            return redirect('/');
-        } elseif (auth()->guard('teacher')->check()){
-            auth()->guard('teacher')->logout();
-                return redirect('/');
-        }
+        auth()->guard('student')->logout();
+        return redirect('/');
     }
 }

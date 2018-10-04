@@ -26,8 +26,8 @@ Route::group(['middleware' => ['user_login:teacher']], function() {
 
 //student
 Route::group(['middleware' => ['user_login:student'] ], function() {
-    Route::get('/student_dashboard/logout', array('uses' => 'login@process_logout'));
-    Route::get('/student_dashboard', array('uses' => 'login@show_student_dashboard'));
+    Route::get('/student/student_dashboard/logout', array('uses' => 'login@process_logout'));
+    Route::get('/student/student_dashboard', array('uses' => 'login@show_student_dashboard'));
 });
 
 //admin
