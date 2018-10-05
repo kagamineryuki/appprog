@@ -16,7 +16,7 @@ Route::get('/admin', array('uses' => 'admin@show_login'));
 Route::get('/', array('uses' => 'login@show_login'));
 
 //teacher
-Route::group(['middleware' => ['user_login:teacher']], function() {
+Route::group(['middleware' => ['user_login:teacher','web']], function() {
     Route::get('/teacher/teacher_dashboard', array('uses' => 'teacher@show_dashboard'));
     Route::get('/teacher/teacher_dashboard/generate_qr_code', array('uses' => 'teacher@show_generate_qr_code'));
     Route::post('/teacher/teacher_dashboard/generate_qr_code/proceed', array('uses' => 'teacher@generate_qr'));
@@ -25,13 +25,13 @@ Route::group(['middleware' => ['user_login:teacher']], function() {
 });
 
 //student
-Route::group(['middleware' => ['user_login:student'] ], function() {
+Route::group(['middleware' => ['user_login:student','web'] ], function() {
     Route::get('/student/student_dashboard/logout', array('uses' => 'login@process_logout'));
     Route::get('/student/student_dashboard', array('uses' => 'login@show_student_dashboard'));
 });
 
 //admin
-Route::middleware(['user_login:admin'])->group(function () {
+Route::middleware(['user_login:admin','web'])->group(function () {
     Route::get('/admin/admin_dashboard/create_user', array('uses' => 'admin@show_create_user_page'));
     Route::get('/admin/admin_dashboard', array('uses' => 'admin@show_dashboard'));
     Route::get('/admin/admin_dashboard/logout', array('uses' => 'admin@do_logout'));
@@ -40,6 +40,10 @@ Route::middleware(['user_login:admin'])->group(function () {
     Route::post('/admin/admin_dashboard/create_user/proceed/create_user', array('uses' => 'admin@do_create_user'));
     Route::post('/admin/admin_dashboard/create_user/proceed/create_pelajaran', array('uses' => 'admin@do_create_pelajaran'));
 });
+
+//api
+Route::post('/student/get_nisn', array('uses'=>'api@give_info'))->middleware('web');
+Route::post('/student/submit_qr', array('uses'=>'api@receive_qr'))->middleware('web');
 
 //submit form to controller
 Route::post('login',array('uses' => 'login@process_login'));

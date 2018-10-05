@@ -18,5 +18,6 @@ return array(
     '601bf5295f4f86b2c9aa6885006f8ce5' => $vendorDir . '/werneckbh/qr-code/src/helpers/constants.php',
     '550b6372332081faf3fe4980a1884cf2' => $vendorDir . '/werneckbh/qr-code/src/helpers/functions.php',
     '0d8253363903f0ac7b0978dcde4e28a0' => $vendorDir . '/beyondcode/laravel-dump-server/helpers.php',
+    '6292c1671f9440c89e0af20a0f78754a' => $vendorDir . '/laracasts/utilities/src/helpers.php',
     'f18cc91337d49233e5754e93f3ed9ec3' => $vendorDir . '/laravelcollective/html/src/helpers.php',
 );

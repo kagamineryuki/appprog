@@ -19,6 +19,7 @@ class ComposerStaticInit7f212ae8bbf151cdcf1f8a826242a889
         '601bf5295f4f86b2c9aa6885006f8ce5' => __DIR__ . '/..' . '/werneckbh/qr-code/src/helpers/constants.php',
         '550b6372332081faf3fe4980a1884cf2' => __DIR__ . '/..' . '/werneckbh/qr-code/src/helpers/functions.php',
         '0d8253363903f0ac7b0978dcde4e28a0' => __DIR__ . '/..' . '/beyondcode/laravel-dump-server/helpers.php',
+        '6292c1671f9440c89e0af20a0f78754a' => __DIR__ . '/..' . '/laracasts/utilities/src/helpers.php',
         'f18cc91337d49233e5754e93f3ed9ec3' => __DIR__ . '/..' . '/laravelcollective/html/src/helpers.php',
     );
 
@@ -88,6 +89,7 @@ class ComposerStaticInit7f212ae8bbf151cdcf1f8a826242a889
             'League\\Flysystem\\' => 17,
             'Laravel\\Tinker\\' => 15,
             'LaravelQRCode\\' => 14,
+            'Laracasts\\Utilities\\JavaScript\\' => 31,
         ),
         'I' => 
         array (
@@ -259,6 +261,10 @@ class ComposerStaticInit7f212ae8bbf151cdcf1f8a826242a889
         array (
             0 => __DIR__ . '/..' . '/werneckbh/laravel-qr-code/src',
         ),
+        'Laracasts\\Utilities\\JavaScript\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/laracasts/utilities/src',
+        ),
         'Illuminate\\' => 
         array (
             0 => __DIR__ . '/..' . '/laravel/framework/src/Illuminate',
@@ -362,6 +368,7 @@ class ComposerStaticInit7f212ae8bbf151cdcf1f8a826242a889
         'App\\Http\\Controllers\\Auth\\VerificationController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/VerificationController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\admin' => __DIR__ . '/../..' . '/app/Http/Controllers/admin.php',
+        'App\\Http\\Controllers\\api' => __DIR__ . '/../..' . '/app/Http/Controllers/api.php',
         'App\\Http\\Controllers\\login' => __DIR__ . '/../..' . '/app/Http/Controllers/login.php',
         'App\\Http\\Controllers\\teacher' => __DIR__ . '/../..' . '/app/Http/Controllers/teacher.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
@@ -1835,6 +1842,17 @@ class ComposerStaticInit7f212ae8bbf151cdcf1f8a826242a889
         'JakubOnderka\\PhpConsoleColor\\InvalidStyleException' => __DIR__ . '/..' . '/jakub-onderka/php-console-color/src/JakubOnderka/PhpConsoleColor/InvalidStyleException.php',
         'JakubOnderka\\PhpConsoleHighlighter\\Highlighter' => __DIR__ . '/..' . '/jakub-onderka/php-console-highlighter/src/JakubOnderka/PhpConsoleHighlighter/Highlighter.php',
         'JsonSerializable' => __DIR__ . '/..' . '/nesbot/carbon/src/JsonSerializable.php',
+        'Laracasts\\Utilities\\JavaScript\\JavaScriptFacade' => __DIR__ . '/..' . '/laracasts/utilities/src/JavaScriptFacade.php',
+        'Laracasts\\Utilities\\JavaScript\\JavaScriptServiceProvider' => __DIR__ . '/..' . '/laracasts/utilities/src/JavaScriptServiceProvider.php',
+        'Laracasts\\Utilities\\JavaScript\\LaravelViewBinder' => __DIR__ . '/..' . '/laracasts/utilities/src/LaravelViewBinder.php',
+        'Laracasts\\Utilities\\JavaScript\\Transformers\\ArrayTransformer' => __DIR__ . '/..' . '/laracasts/utilities/src/Transformers/ArrayTransformer.php',
+        'Laracasts\\Utilities\\JavaScript\\Transformers\\BooleanTransformer' => __DIR__ . '/..' . '/laracasts/utilities/src/Transformers/BooleanTransformer.php',
+        'Laracasts\\Utilities\\JavaScript\\Transformers\\NullTransformer' => __DIR__ . '/..' . '/laracasts/utilities/src/Transformers/NullTransformer.php',
+        'Laracasts\\Utilities\\JavaScript\\Transformers\\NumericTransformer' => __DIR__ . '/..' . '/laracasts/utilities/src/Transformers/NumericTransformer.php',
+        'Laracasts\\Utilities\\JavaScript\\Transformers\\ObjectTransformer' => __DIR__ . '/..' . '/laracasts/utilities/src/Transformers/ObjectTransformer.php',
+        'Laracasts\\Utilities\\JavaScript\\Transformers\\StringTransformer' => __DIR__ . '/..' . '/laracasts/utilities/src/Transformers/StringTransformer.php',
+        'Laracasts\\Utilities\\JavaScript\\Transformers\\Transformer' => __DIR__ . '/..' . '/laracasts/utilities/src/Transformers/Transformer.php',
+        'Laracasts\\Utilities\\JavaScript\\ViewBinder' => __DIR__ . '/..' . '/laracasts/utilities/src/ViewBinder.php',
         'LaravelQRCode\\Exceptions\\EmptyTextException' => __DIR__ . '/..' . '/werneckbh/laravel-qr-code/src/Exceptions/EmptyTextException.php',
         'LaravelQRCode\\Exceptions\\MalformedUrlException' => __DIR__ . '/..' . '/werneckbh/laravel-qr-code/src/Exceptions/MalformedUrlException.php',
         'LaravelQRCode\\Facades\\QRCode' => __DIR__ . '/..' . '/werneckbh/laravel-qr-code/src/Facades/QRCode.php',

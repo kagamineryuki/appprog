@@ -2,171 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8f5c94c8-6fef-4944-aa12-76acae277f4d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/appprog.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/appprog.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsqr/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsqr/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsqr/dist/BitMatrix.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsqr/dist/binarizer/index.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsqr/dist/decoder/decodeData/BitStream.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsqr/dist/decoder/decodeData/index.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsqr/dist/decoder/decodeData/shiftJISTable.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsqr/dist/decoder/decoder.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsqr/dist/decoder/reedsolomon/GenericGF.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsqr/dist/decoder/reedsolomon/GenericGFPoly.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsqr/dist/decoder/reedsolomon/index.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsqr/dist/decoder/version.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsqr/dist/extractor/index.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsqr/dist/index.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsqr/dist/jsQR.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsqr/dist/locator/index.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsqr/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/rtcpeerconnection-shim/.eslintrc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/rtcpeerconnection-shim/.travis.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/rtcpeerconnection-shim/LICENSE.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/rtcpeerconnection-shim/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/rtcpeerconnection-shim/icerestart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/rtcpeerconnection-shim/karma.conf.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/rtcpeerconnection-shim/nortx-answer.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/rtcpeerconnection-shim/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/rtcpeerconnection-shim/rtcpeerconnection.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/rtcpeerconnection-shim/test/.eslintrc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/rtcpeerconnection-shim/test/gummock.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/rtcpeerconnection-shim/test/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/rtcpeerconnection-shim/test/ortcmock.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/rtcpeerconnection-shim/test/rtcpeerconnection.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/rtcpeerconnection-shim/wa-rtp.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/sdp/.eslintrc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/sdp/.nyc_output/1e71bd1f520a11c8a9321c00c0a7a6c3.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/sdp/.nyc_output/fdca32aa6ea72f2bc02f5acb604d8306.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/sdp/.travis.yml" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/sdp/.travis.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/sdp/CONTRIBUTING.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/sdp/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/sdp/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/sdp/sdp.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/sdp/sdp.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/vue-qrcode-reader/.babelrc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/vue-qrcode-reader/.editorconfig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/vue-qrcode-reader/.eslintignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/vue-qrcode-reader/.eslintrc.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/vue-qrcode-reader/.travis.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/vue-qrcode-reader/CONTRIBUTING.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/vue-qrcode-reader/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/vue-qrcode-reader/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/vue-qrcode-reader/config/webpack.config.base.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/vue-qrcode-reader/config/webpack.config.browser.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/vue-qrcode-reader/config/webpack.config.common.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/vue-qrcode-reader/config/webpack.config.dev.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/vue-qrcode-reader/config/webpack.config.test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/vue-qrcode-reader/dist/vue-qrcode-reader.browser.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/vue-qrcode-reader/dist/vue-qrcode-reader.common.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/vue-qrcode-reader/dist/vue-qrcode-reader.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/vue-qrcode-reader/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/vue-qrcode-reader/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/vue-qrcode-reader/src/components/QrcodeReader.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/vue-qrcode-reader/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/vue-qrcode-reader/src/misc/camera.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/vue-qrcode-reader/src/misc/errors.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/vue-qrcode-reader/src/misc/image-data.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/vue-qrcode-reader/src/misc/promisify.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/vue-qrcode-reader/src/misc/scanner.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/vue-qrcode-reader/src/misc/worker.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/vue-qrcode-reader/test/e2e/custom-assertions/elementCount.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/vue-qrcode-reader/test/e2e/nightwatch.conf.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/vue-qrcode-reader/test/e2e/runner.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/vue-qrcode-reader/test/e2e/specs/test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/vue-qrcode-reader/test/unit/.eslintrc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/vue-qrcode-reader/test/unit/coverage/lcov-report/base.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/vue-qrcode-reader/test/unit/coverage/lcov-report/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/vue-qrcode-reader/test/unit/coverage/lcov-report/prettify.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/vue-qrcode-reader/test/unit/coverage/lcov-report/prettify.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/vue-qrcode-reader/test/unit/coverage/lcov-report/sort-arrow-sprite.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/vue-qrcode-reader/test/unit/coverage/lcov-report/sorter.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/vue-qrcode-reader/test/unit/coverage/lcov.info" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/vue-qrcode-reader/test/unit/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/vue-qrcode-reader/test/unit/karma.conf.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/vue-qrcode-reader/test/unit/specs/Hello.spec.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/vue-qrcode-reader/yarn.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/webrtc-adapter/.eslintrc" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/webrtc-adapter/.eslintrc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/webrtc-adapter/.github/ISSUE_TEMPLATE.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/webrtc-adapter/.github/PULL_REQUEST_TEMPLATE.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/webrtc-adapter/.travis.yml" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/webrtc-adapter/.travis.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/webrtc-adapter/Gruntfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/webrtc-adapter/Gruntfile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/webrtc-adapter/LICENSE.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/webrtc-adapter/LICENSE.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/webrtc-adapter/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/webrtc-adapter/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/webrtc-adapter/bower.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/webrtc-adapter/bower.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/webrtc-adapter/out/adapter.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/webrtc-adapter/out/adapter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/webrtc-adapter/out/adapter_no_edge.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/webrtc-adapter/out/adapter_no_edge.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/webrtc-adapter/out/adapter_no_edge_no_global.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/webrtc-adapter/out/adapter_no_edge_no_global.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/webrtc-adapter/out/adapter_no_global.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/webrtc-adapter/out/adapter_no_global.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/webrtc-adapter/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/webrtc-adapter/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/webrtc-adapter/src/js/adapter_core.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/webrtc-adapter/src/js/adapter_core.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/webrtc-adapter/src/js/adapter_factory.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/webrtc-adapter/src/js/chrome/chrome_shim.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/webrtc-adapter/src/js/chrome/chrome_shim.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/webrtc-adapter/src/js/chrome/getusermedia.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/webrtc-adapter/src/js/chrome/getusermedia.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/webrtc-adapter/src/js/common_shim.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/webrtc-adapter/src/js/edge/edge_shim.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/webrtc-adapter/src/js/edge/edge_shim.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/webrtc-adapter/src/js/edge/filtericeservers.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/webrtc-adapter/src/js/edge/getusermedia.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/webrtc-adapter/src/js/edge/getusermedia.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/webrtc-adapter/src/js/firefox/firefox_shim.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/webrtc-adapter/src/js/firefox/firefox_shim.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/webrtc-adapter/src/js/firefox/getusermedia.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/webrtc-adapter/src/js/firefox/getusermedia.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/webrtc-adapter/src/js/safari/safari_shim.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/webrtc-adapter/src/js/safari/safari_shim.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/webrtc-adapter/src/js/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/webrtc-adapter/src/js/utils.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/webrtc-adapter/test/.eslintrc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/webrtc-adapter/test/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/webrtc-adapter/test/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/webrtc-adapter/test/e2e/.eslintrc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/webrtc-adapter/test/e2e/addIceCandidate.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/webrtc-adapter/test/e2e/addTrack.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/webrtc-adapter/test/e2e/browserdetails.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/webrtc-adapter/test/e2e/connection.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/webrtc-adapter/test/e2e/createObjectURL.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/webrtc-adapter/test/e2e/dtmf.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/webrtc-adapter/test/e2e/expectations/Electron" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/webrtc-adapter/test/e2e/expectations/MicrosoftEdge" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/webrtc-adapter/test/e2e/expectations/chrome-beta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/webrtc-adapter/test/e2e/expectations/chrome-beta-no-experimental" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/webrtc-adapter/test/e2e/expectations/chrome-stable" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/webrtc-adapter/test/e2e/expectations/chrome-stable-no-experimental" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/webrtc-adapter/test/e2e/expectations/chrome-unstable" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/webrtc-adapter/test/e2e/expectations/firefox-beta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/webrtc-adapter/test/e2e/expectations/firefox-esr" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/webrtc-adapter/test/e2e/expectations/firefox-nightly" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/webrtc-adapter/test/e2e/expectations/firefox-stable" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/webrtc-adapter/test/e2e/getStats.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/webrtc-adapter/test/e2e/getusermedia.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/webrtc-adapter/test/e2e/maxMessageSize.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/webrtc-adapter/test/e2e/mediaDevices.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/webrtc-adapter/test/e2e/mediastream.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/webrtc-adapter/test/e2e/msid.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/webrtc-adapter/test/e2e/negotiationneeded.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/webrtc-adapter/test/e2e/ontrack.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/webrtc-adapter/test/e2e/removeTrack.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/webrtc-adapter/test/e2e/rtcicecandidate.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/webrtc-adapter/test/e2e/rtcpeerconnection.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/webrtc-adapter/test/e2e/rtcsessiondescription.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/webrtc-adapter/test/e2e/srcobject.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/webrtc-adapter/test/getusermedia-mocha.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/webrtc-adapter/test/karma.conf.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/webrtc-adapter/test/unit/.eslintrc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/webrtc-adapter/test/unit/adapter_factory.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/webrtc-adapter/test/unit/chrome.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/webrtc-adapter/test/unit/detectBrowser.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/webrtc-adapter/test/unit/edge.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/webrtc-adapter/test/unit/extractVersion.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/webrtc-adapter/test/unit/firefox.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/webrtc-adapter/test/unit/getusermedia-constraints.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/webrtc-adapter/test/unit/logSuppression.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/webrtc-adapter/test/unit/rtcicecandidate.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/webrtc-adapter/test/unit/safari.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/bootstrap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/qrcode.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/qrcode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/qrcode.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/qrcode.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/student_dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/student_dashboard.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/template.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/template.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.mix.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_files.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_files.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -182,14 +33,16 @@
     <session id="1726008564">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="10" />
+          <entry key="project.closed" value="13" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.1" value="1" />
-          <entry key="project.open.time.10" value="1" />
+          <entry key="project.open.time.10" value="3" />
+          <entry key="project.open.time.12" value="1" />
           <entry key="project.open.time.14" value="1" />
           <entry key="project.open.time.6" value="2" />
+          <entry key="project.open.time.7" value="1" />
           <entry key="project.open.time.9" value="5" />
-          <entry key="project.opened" value="11" />
+          <entry key="project.opened" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -198,9 +51,9 @@
           <entry key="gitattributes" value="1" />
           <entry key="gitignore" value="2" />
           <entry key="js" value="18" />
-          <entry key="json" value="10" />
+          <entry key="json" value="11" />
           <entry key="lock" value="1" />
-          <entry key="php" value="152" />
+          <entry key="php" value="168" />
           <entry key="rnc" value="1" />
           <entry key="scss" value="1" />
           <entry key="vue" value="3" />
@@ -209,10 +62,10 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key=".env file" value="1" />
-          <entry key="Blade" value="76" />
-          <entry key="JSON" value="11" />
+          <entry key="Blade" value="84" />
+          <entry key="JSON" value="12" />
           <entry key="JavaScript" value="18" />
-          <entry key="PHP" value="76" />
+          <entry key="PHP" value="84" />
           <entry key="PLAIN_TEXT" value="3" />
           <entry key="RNG Compact" value="1" />
           <entry key="SCSS" value="1" />
@@ -224,20 +77,21 @@
           <entry key="dummy" value="47" />
           <entry key="env" value="17" />
           <entry key="gitignore" value="14" />
-          <entry key="js" value="701" />
+          <entry key="js" value="1935" />
           <entry key="json" value="2" />
-          <entry key="php" value="17581" />
+          <entry key="php" value="19384" />
           <entry key="vue" value="179" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key=".env file" value="17" />
-          <entry key="Blade" value="7562" />
+          <entry key="Blade" value="7841" />
           <entry key="JSON" value="2" />
-          <entry key="JavaScript" value="701" />
-          <entry key="PHP" value="10019" />
+          <entry key="JavaScript" value="1935" />
+          <entry key="PHP" value="11525" />
           <entry key="PLAIN_TEXT" value="61" />
+          <entry key="SQL" value="18" />
           <entry key="Vue.js" value="179" />
         </counts>
       </usages-collector>
@@ -254,58 +108,72 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="29">
-              <caret line="29" column="25" selection-start-line="29" selection-start-column="25" selection-end-line="29" selection-end-column="25" />
+            <state relative-caret-position="370">
+              <caret line="45" column="63" selection-start-line="45" selection-start-column="63" selection-end-line="45" selection-end-column="63" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webpack.mix.js">
+        <entry file="file://$PROJECT_DIR$/resources/js/qrcode.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="174">
-              <caret line="6" column="2" selection-start-line="6" selection-start-column="2" selection-end-line="6" selection-end-column="2" />
+            <state relative-caret-position="225">
+              <caret line="57" column="23" selection-start-line="57" selection-start-column="23" selection-end-line="57" selection-end-column="23" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/student_dashboard.blade.php">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/api.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="290">
-              <caret line="10" column="31" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
+            <state relative-caret-position="225">
+              <caret line="29" column="12" selection-start-line="29" selection-start-column="12" selection-end-line="29" selection-end-column="12" />
+              <folding>
+                <element signature="e#40#68#0#PHP" expanded="true" />
+              </folding>
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/teacher/generate_qr_code.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="283">
+              <caret line="56" column="16" selection-start-line="56" selection-start-column="16" selection-end-line="56" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/database/migrations/2018_09_29_135110_create_tbl_absensis_table.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-174" />
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/js/qrcode.js">
+        <entry file="file://$PROJECT_DIR$/resources/views/student_dashboard.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="145">
-              <caret line="5" column="36" selection-start-line="5" selection-start-column="36" selection-end-line="5" selection-end-column="36" />
+            <state relative-caret-position="109">
+              <caret line="14" selection-start-line="14" selection-end-line="22" selection-end-column="15" />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/js/bootstrap.js">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/template.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="16" column="202" selection-start-line="16" selection-start-column="202" selection-end-line="16" selection-end-column="202" />
+            <state relative-caret-position="145">
+              <caret line="5" column="57" selection-start-line="5" selection-start-column="57" selection-end-line="5" selection-end-column="57" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/login.php">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/teacher.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="46" column="50" selection-start-line="46" selection-start-column="50" selection-end-line="46" selection-end-column="50" />
+            <state relative-caret-position="-754">
+              <caret line="8" column="34" selection-start-line="8" selection-end-line="9" />
             </state>
           </provider>
         </entry>
@@ -327,8 +195,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/.env" />
-        <option value="$PROJECT_DIR$/resources/sass/app.scss" />
         <option value="$PROJECT_DIR$/resources/views/welcome_css.blade.php" />
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/composer.lock" />
@@ -364,20 +230,22 @@
         <option value="$PROJECT_DIR$/resources/views/teacher/dashboard_template.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/teacher/teacher_dashboard.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/teacher.php" />
-        <option value="$PROJECT_DIR$/resources/views/teacher/generate_qr_code.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/student_template.blade.php" />
-        <option value="$PROJECT_DIR$/routes/web.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/login.php" />
         <option value="$PROJECT_DIR$/resources/js/components/qr_code.vue" />
         <option value="$PROJECT_DIR$/resources/views/student_script.blade.php" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/resources/js/components/qrcode.vue" />
-        <option value="$PROJECT_DIR$/resources/views/template.blade.php" />
         <option value="$PROJECT_DIR$/resources/js/app.js" />
         <option value="$PROJECT_DIR$/webpack.mix.js" />
         <option value="$PROJECT_DIR$/resources/js/bootstrap.js" />
-        <option value="$PROJECT_DIR$/resources/views/student_dashboard.blade.php" />
+        <option value="$PROJECT_DIR$/config/javascript.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/login.php" />
+        <option value="$PROJECT_DIR$/resources/views/template.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/teacher/generate_qr_code.blade.php" />
+        <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/resources/js/qrcode.js" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/api.php" />
+        <option value="$PROJECT_DIR$/resources/views/student_dashboard.blade.php" />
       </list>
     </option>
   </component>
@@ -475,10 +343,12 @@
       <path value="$PROJECT_DIR$/vendor/werneckbh/laravel-qr-code" />
       <path value="$PROJECT_DIR$/vendor/libern/qr-code-reader" />
       <path value="$PROJECT_DIR$/vendor/werneckbh/qr-code" />
+      <path value="$PROJECT_DIR$/vendor/laracasts/utilities" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="y" value="-3" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-9" />
+    <option name="y" value="1" />
     <option name="width" value="1920" />
     <option name="height" value="1043" />
   </component>
@@ -490,6 +360,75 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope">
+        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
+          <expand>
+            <path>
+              <item name="appprog" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+            </path>
+            <path>
+              <item name="appprog" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="appprog" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="Http" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="appprog" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="Http" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="Controllers" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="appprog" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="config" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="appprog" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="database" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="appprog" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="database" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="migrations" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="appprog" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="resources" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="appprog" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="resources" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="js" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="appprog" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="resources" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="views" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="appprog" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="resources" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="views" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="teacher" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -530,33 +469,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope">
-        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
-          <expand>
-            <path>
-              <item name="appprog" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-            </path>
-            <path>
-              <item name="appprog" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="appprog" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="resources" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="appprog" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="resources" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="js" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -565,7 +477,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.editor" />
+    <property name="settings.editor.selected.configurable" value="database.sql.templating" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -613,18 +525,22 @@
       <workItem from="1538546612729" duration="12787000" />
       <workItem from="1538623301419" duration="11988000" />
       <workItem from="1538656686356" duration="6184000" />
-      <workItem from="1538662910340" duration="11002000" />
+      <workItem from="1538662910340" duration="11605000" />
+      <workItem from="1538702451616" duration="1171000" />
+      <workItem from="1538731614847" duration="138000" />
+      <workItem from="1538731769896" duration="10816000" />
+      <workItem from="1538743993897" duration="4233000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="94444000" />
+    <option name="totallyTimeSpent" value="111405000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="-2" width="1536" height="834" extended-state="0" />
+    <frame x="-7" y="0" width="1550" height="841" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1700542" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17718121" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -675,31 +591,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/database/seeds/TblStudentSeeder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="522">
-          <caret line="18" column="30" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/register.php" />
-    <entry file="file://$PROJECT_DIR$/config/app.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1756">
-          <caret line="211" column="52" selection-start-line="211" selection-start-column="52" selection-end-line="211" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/User.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/session.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1073">
-          <caret line="23" column="79" lean-forward="true" selection-start-line="23" selection-start-column="79" selection-end-line="23" selection-end-column="79" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2018_09_29_134933_create_tbl_pelajarans_table.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -739,13 +630,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/tblStudent.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="12" column="33" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/tblTeacher.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="348">
           <caret line="12" column="33" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="33" />
@@ -854,13 +738,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/teacher.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="551">
-          <caret line="25" column="114" selection-start-line="25" selection-start-column="114" selection-end-line="25" selection-end-column="114" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/teacher/dashboard_template.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="602">
@@ -868,76 +745,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/teacher/generate_qr_code.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="87">
-          <caret line="3" selection-start-line="3" selection-end-line="5" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/components/qr_code.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="29">
-          <caret line="1" column="54" selection-start-line="1" selection-start-column="54" selection-end-line="1" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/student_template.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="522">
-          <caret line="32" column="6" selection-start-line="32" selection-start-column="6" selection-end-line="32" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/components/qr_code.vue" />
     <entry file="file://$PROJECT_DIR$/resources/views/student_script.blade.php" />
-    <entry file="file://$PROJECT_DIR$/webpack.config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="18" column="26" lean-forward="true" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/webpack.config.js" />
     <entry file="file://$PROJECT_DIR$/package-lock.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2349" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/instascan.min.js">
+    <entry file="file://$PROJECT_DIR$/resources/js/instascan.min.js" />
+    <entry file="file://$PROJECT_DIR$/public/js/app.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/components/qrcode.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="13" column="13" lean-forward="true" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-          <folding>
-            <element signature="e#91#112#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="457">
-          <caret line="22" column="1" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="46" column="50" selection-start-line="46" selection-start-column="50" selection-end-line="46" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/components/qrcode.vue" />
     <entry file="file://$PROJECT_DIR$/resources/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="22">
@@ -945,15 +765,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
+    <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="29">
-          <caret line="29" column="25" selection-start-line="29" selection-start-column="25" selection-end-line="29" selection-end-column="25" />
+        <state relative-caret-position="254">
+          <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/js/bootstrap.js">
-      <provider selected="true" editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="348">
+          <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="49" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/webpack.mix.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -962,24 +786,99 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/template.blade.php">
+    <entry file="file://$PROJECT_DIR$/config/javascript.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="16" column="202" selection-start-line="16" selection-start-column="202" selection-end-line="16" selection-end-column="202" />
+        <state relative-caret-position="225">
+          <caret line="15" column="44" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/student_dashboard.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/login.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="10" column="31" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
+        <state relative-caret-position="435">
+          <caret line="68" column="35" selection-start-line="68" selection-start-column="35" selection-end-line="68" selection-end-column="35" />
+          <folding>
+            <element signature="e#40#59#0#PHP" expanded="true" />
+            <element signature="e#545#2042#0#PHP" />
+            <element signature="e#2048#2161#0#PHP" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/student_template.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="5" column="8" lean-forward="true" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/tblTeacher.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="319">
+          <caret line="12" column="33" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/tblAbsensi.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/tblCode.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/template.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="5" column="57" selection-start-line="5" selection-start-column="57" selection-end-line="5" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/teacher.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-754">
+          <caret line="8" column="34" selection-start-line="8" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="370">
+          <caret line="45" column="63" selection-start-line="45" selection-start-column="63" selection-end-line="45" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/teacher/generate_qr_code.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="283">
+          <caret line="56" column="16" selection-start-line="56" selection-start-column="16" selection-end-line="56" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2018_09_29_135110_create_tbl_absensis_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-174" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/api.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="29" column="12" selection-start-line="29" selection-start-column="12" selection-end-line="29" selection-end-column="12" />
+          <folding>
+            <element signature="e#40#68#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/js/qrcode.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="5" column="36" selection-start-line="5" selection-start-column="36" selection-end-line="5" selection-end-column="36" />
+        <state relative-caret-position="225">
+          <caret line="57" column="23" selection-start-line="57" selection-start-column="23" selection-end-line="57" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/student_dashboard.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="109">
+          <caret line="14" selection-start-line="14" selection-end-line="22" selection-end-column="15" />
         </state>
       </provider>
     </entry>
