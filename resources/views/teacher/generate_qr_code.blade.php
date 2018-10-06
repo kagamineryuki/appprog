@@ -65,10 +65,12 @@
                     {{QRCode::text($qr_code->id_qr.",".$qr_code->kode_kelas.",".$qr_code->kode_pelajaran.",".$qr_code->nign)->setSize(35)->setErrorCorrectionLevel('H')->svg()}}
                 @endif
                 <div class="align-self-center">
-                    <h1 class="h1 text-center m-0"><strong>Can't scan the code ?</strong></h1>
-                    <h1 class="h2 text-center">
-                        <strong>{{$qr_code->id_qr.",".$qr_code->kode_kelas.",".$qr_code->kode_pelajaran.",".$qr_code->nign}}</strong>
-                    </h1>
+                    @if(!empty($qr_code))
+                        <h1 class="h1 text-center m-0"><strong>Can't scan the code ?</strong></h1>
+                        <h1 class="h2 text-center">
+                            <strong>{{$qr_code->id_qr.",".$qr_code->kode_kelas.",".$qr_code->kode_pelajaran.",".$qr_code->nign}}</strong>
+                        </h1>
+                    @endif
                 </div>
             </div>
         </div>
