@@ -18,7 +18,8 @@
                         <label>Kelas</label>
                         <select class="form-control is-invalid" name="kelas">
                             @foreach($kelas as $per_kelas)
-                                <option value="{{$per_kelas->kode_kelas}}">{{$per_kelas->kode_kelas}} | {{$per_kelas->nama_kelas}}</option>
+                                <option value="{{$per_kelas->kode_kelas}}">{{$per_kelas->kode_kelas}}
+                                    | {{$per_kelas->nama_kelas}}</option>
                             @endforeach
                         </select>
                         <div class="invalid-feedback">
@@ -32,7 +33,8 @@
                         <label>Pelajaran</label>
                         <select class="form-control is-invalid" name="pelajaran">
                             @foreach($pelajaran as $per_pelajaran)
-                                <option value="{{$per_pelajaran->kode_pelajaran}}">{{$per_pelajaran->kode_pelajaran}} | {{$per_pelajaran->nama_pelajaran}}</option>
+                                <option value="{{$per_pelajaran->kode_pelajaran}}">{{$per_pelajaran->kode_pelajaran}}
+                                    | {{$per_pelajaran->nama_pelajaran}}</option>
                             @endforeach
                         </select>
                         <div class="invalid-feedback">
@@ -44,7 +46,8 @@
 
                     <div class="col">
                         <label>Valid until</label>
-                        <input type="datetime-local" class="form-control is-invalid" name="valid_until" value="{{old('valid_until')}}">
+                        <input type="datetime-local" class="form-control is-invalid" name="valid_until"
+                               value="{{old('valid_until')}}">
                         <div class="invalid-feedback">
                             @if($errors->has('valid_until'))
                                 <p class="text-danger">{{$errors->first('valid_until')}}</p>
@@ -55,8 +58,19 @@
                 <input type="submit" class="btn btn-primary mt-3">
             </form>
             <hr>
-            <h1 class="display-4">Kode QR</h1>
-            {{QRCode::text($qr_code->id_qr.",".$qr_code->kode_kelas.",".$qr_code->kode_pelajaran.",".$qr_code->nign)->setSize(35)->setErrorCorrectionLevel('H')->svg()}}
+            <h1 class="display-4 m-0">Kode QR</h1>
+
+            <div class="container d-flex m-0 align-content-center justify-content-center">
+                @if(!empty($qr_code))
+                    {{QRCode::text($qr_code->id_qr.",".$qr_code->kode_kelas.",".$qr_code->kode_pelajaran.",".$qr_code->nign)->setSize(35)->setErrorCorrectionLevel('H')->svg()}}
+                @endif
+                <div class="align-self-center">
+                    <h1 class="h1 text-center m-0"><strong>Can't scan the code ?</strong></h1>
+                    <h1 class="h2 text-center">
+                        <strong>{{$qr_code->id_qr.",".$qr_code->kode_kelas.",".$qr_code->kode_pelajaran.",".$qr_code->nign}}</strong>
+                    </h1>
+                </div>
+            </div>
         </div>
     </div>
 @endsection

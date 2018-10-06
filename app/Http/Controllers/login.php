@@ -19,7 +19,22 @@ class login extends Controller
     }
 
     public function show_student_dashboard(){
-        return view('student_dashboard');
+        $data = DB::select(
+            'SELECT DISTINCT 
+                    tbl_teachers.nama AS teacher_name,
+                    tbl_pelajarans.nama_pelajaran AS nama_pelajaran,
+                    tbl_students.nama AS student_name,
+                    tbl_absensis.created_at AS created_at,
+                    tbl_codes.valid_until AS valid_until,
+                    tbl_kelas.nama_kelas AS nama_kelas
+                    
+                    FROM 
+                    tbl_codes,tbl_students,tbl_teachers,tbl_pelajarans,tbl_kelas,tbl_absensis
+                    
+                    WHERE
+                    tbl_absensis.nisn = :nisn',
+            ['nisn'=>auth()->guard('student')->user()->nisn]);
+        return view('student_dashboard')->with(['data'=>$data]);
     }
 
     public function process_login(Request $request){

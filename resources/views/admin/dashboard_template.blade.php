@@ -37,16 +37,15 @@
             </a>
 
             <a href="/admin/admin_dashboard/create_user">
-                <li class="list-group-item {{Request::is('admin/admin_dashboard/create_user')? 'active' : '' }}">Create
-                    User
+                <li class="list-group-item {{Request::is('admin/admin_dashboard/create_user')? 'active' : '' }}">Create Items
                 </li>
             </a>
 
             <a href="#">
-                <li class="list-group-item ">Update User</li>
+                <li class="list-group-item ">Update Items</li>
             </a>
             <a href="#">
-                <li class="list-group-item bg-danger text-light">Remove User</li>
+                <li class="list-group-item bg-danger text-light">Delete Items</li>
             </a>
 
         </ul>

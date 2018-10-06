@@ -14,11 +14,11 @@ class CreateTblCodesTable extends Migration
     public function up()
     {
         Schema::create('tbl_codes', function (Blueprint $table) {
-            $table->increments('id_qr');
+            $table->unsignedBigInteger('id_qr')->autoIncrement();
             $table->timestamp('valid_until');
 
             //nign
-            $table->string('nign')->unique();
+            $table->string('nign');
             $table->foreign('nign')->references('nign')->on('tbl_teachers');
 
             //pelajaran
@@ -29,7 +29,6 @@ class CreateTblCodesTable extends Migration
             $table->string('kode_kelas');
             $table->foreign('kode_kelas')->references('kode_kelas')->on('tbl_kelas');
 
-//            $table->primary('id_qr');
             $table->timestamps();
         });
     }

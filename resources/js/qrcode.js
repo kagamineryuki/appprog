@@ -16,8 +16,6 @@ $(document).ready(function(){
     });
     scanner.addListener('scan', function (content) {
         console.log(content);
-        splitted_content = content.split(",");
-        console.log(splitted_content);
 
         $.ajax({
             url: "/student/get_nisn",
@@ -26,7 +24,7 @@ $(document).ready(function(){
                 alert(status);
                 alert(data.nisn);
 
-                send_data(data.nisn,splitted_content);
+                send_data(data.nisn,content);
             },
             error: function (xhr,status,error) {
                 alert(error);
@@ -47,7 +45,7 @@ $(document).ready(function(){
         console.error(e);
     });
 
-    function send_data(nisn,splitted_content) {
+    function send_data(nisn,content) {
 
         $.ajax({
             url: '/student/submit_qr',
@@ -55,10 +53,7 @@ $(document).ready(function(){
             async: false,
             dataType: 'json',
             data: {
-                kode_qr: splitted_content[0],
-                kode_kelas: splitted_content[1],
-                kode_pelajaran: splitted_content[2],
-                nign: splitted_content[3],
+                kode_qr: content,
                 nisn: nisn
             },
             success: function(data){

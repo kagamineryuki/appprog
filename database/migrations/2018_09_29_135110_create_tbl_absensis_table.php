@@ -20,7 +20,7 @@ class CreateTblAbsensisTable extends Migration
             $table->foreign('nisn')->references('nisn')->on('tbl_students');
 
             //kode qr
-            $table->increments('id_qr');
+            $table->unsignedBigInteger('id_qr');
             $table->foreign('id_qr')->references('id_qr')->on('tbl_codes');
 
             $table->timestamps();
