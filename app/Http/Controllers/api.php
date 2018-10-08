@@ -4,13 +4,37 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\tblAbsensi;
+use App\tblStudent;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Redirect;
 
 
 class api extends Controller
 {
+    public function verify_user(Request $request){
+        $query = DB::table('tbl_students')->select('nisn','password','nama')->where('nisn',$request->username)->first();
+
+        if(Hash::check($request->password,$query->password)){
+            $result = [
+                'nisn'=>$query->nisn,
+                'name'=>$query->nama,
+                'message'=>"You're logged in. Have a nice day, ".$query->nama,
+                'error' => FALSE
+            ];
+
+            return $result;
+        }else{
+            $result = [
+                'message'=>"Please check your credential",
+                'error' => FALSE
+            ];
+
+            return $result;
+        }
+    }
+
     public function receive_qr(Request $request){
         $splitted_qr_code = explode(",",$request->kode_qr);
         $data = DB::select(
