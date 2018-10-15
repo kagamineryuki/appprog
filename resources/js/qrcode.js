@@ -18,7 +18,7 @@ $(document).ready(function(){
         console.log(content);
 
         $.ajax({
-            url: "/student/get_nisn",
+            url: "./get_nisn",
             type: "POST",
             success: function(data,status,xhr){
                 alert(status);
@@ -48,7 +48,7 @@ $(document).ready(function(){
     function send_data(nisn,content) {
 
         $.ajax({
-            url: '/student/submit_qr',
+            url: './submit_qr',
             method: 'POST',
             async: false,
             dataType: 'json',

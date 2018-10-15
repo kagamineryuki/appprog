@@ -16,6 +16,10 @@ class CreateTblStudentsTable extends Migration
         Schema::create('tbl_students', function (Blueprint $table) {
             $table->string('nisn')->unique();
             $table->text('nama');
+            $table->longText('alamat')->nullable();
+            $table->date('tanggal_lahir')->nullable();
+            $table->text('tempat_lahir')->nullable();
+            $table->text('no_telp')->nullable();
             $table->text('password');
             $table->boolean('isAdmin');
             $table->primary('nisn');

@@ -45,6 +45,10 @@ Route::middleware(['user_login:admin','web'])->group(function () {
 Route::post('/student/get_nisn', array('uses'=>'api@give_info'))->middleware('web');
 Route::post('/student/submit_qr', array('uses'=>'api@receive_qr'))->middleware('web');
 Route::post('/api/verify_user', array('uses'=>'api@verify_user'));
+Route::post('/api/create_attendance', array('uses'=>'api@create_attendance'));
+Route::post('/api/retrieve_user_info', array('uses'=>'api@retrieve_user_info'));
+Route::post('/api/update_user_info', array('uses'=>'api@update_user_info'));
+
 
 
 //submit form to controller

@@ -15,7 +15,7 @@
     <div class="container">
         <h1 class="text-center h3">Can't scan the code ?</h1>
         <p class="text-center">Input the code below</p>
-        <form action="/student/submit_qr" method="POST">
+        <form action="./submit_qr" method="POST">
             {{csrf_field()}}
             <input type="text" name="kode_qr" class="form-control mb-2" placeholder="QR Code Subtitution">
             <input type="hidden" name="nisn" value="{{auth()->guard('student')->user()->nisn}}">

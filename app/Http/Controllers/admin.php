@@ -88,6 +88,10 @@ class admin extends Controller
                     $tblStudent->nisn = $request->username;
                     $tblStudent->password = Hash::make($request->password);
                     $tblStudent->nama = $request->nama;
+                    $tblStudent->alamat = $request->alamat;
+                    $tblStudent->tanggal_lahir = $request->tgllahir;
+                    $tblStudent->tempat_lahir = $request->tempat_lahir;
+                    $tblStudent->no_telp = $request->notelp;
                     $tblStudent->isAdmin = false;
                     $tblStudent->save();
 
@@ -114,6 +118,10 @@ class admin extends Controller
                     $tblTeacher->nign = $request->username;
                     $tblTeacher->password = Hash::make($request->password);
                     $tblTeacher->nama = $request->nama;
+                    $tblTeacher->alamat = $request->alamat;
+                    $tblTeacher->tanggal_lahir = $request->tgllahir;
+                    $tblTeacher->tempat_lahir = $request->tempat_lahir;
+                    $tblTeacher->no_telp = $request->notelp;
                     $tblTeacher->isAdmin = false;
                     $tblTeacher->save();
 

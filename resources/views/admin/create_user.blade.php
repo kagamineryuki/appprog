@@ -17,8 +17,8 @@
                 <form method="POST" action="/admin/admin_dashboard/create_user/proceed/create_user">
                     {{csrf_field()}}
                     <div class="form-group mb-3">
-                        <label class="mr-3"><strong>NISN / NIGN</strong></label>
-                        <input type="text" class="form-control is-invalid" name="username"
+                        <label class="mr-3"><strong>NISN / NIGN*</strong></label>
+                        <input type="text" class="form-control " name="username"
                                value="{{old('username')}}">
                         <div class="invalid-feedback">
                             @if($errors->has('username'))
@@ -26,21 +26,63 @@
                             @endif
                         </div>
                     </div>
+
                     <div class="form-group mb-3">
-                        <label class="mr-3"><strong>Nama</strong></label>
-                        <input type="text" class="form-control is-invalid" value="{{old('nama')}}" name="nama">
+                        <label class="mr-3"><strong>Password*</strong></label>
+                        <input type="password" class="form-control " name="password">
+                        <div class="invalid-feedback">
+                            @if($errors->has('password'))
+                                <p class="text-danger">{{$errors->first('password')}}</p>
+                            @endif
+                        </div>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label class="mr-3"><strong>Nama*</strong></label>
+                        <input type="text" class="form-control " value="{{old('nama')}}" name="nama">
                         <div class="invalid-feedback">
                             @if($errors->has('nama'))
                                 <p class="text-danger">{{$errors->first('nama')}}</p>
                             @endif
                         </div>
                     </div>
+
                     <div class="form-group mb-3">
-                        <label class="mr-3"><strong>Password</strong></label>
-                        <input type="password" class="form-control is-invalid" name="password">
+                        <label class="mr-3"><strong>Alamat</strong></label>
+                        <input type="text" class="form-control " value="{{old('alamat')}}" name="alamat">
                         <div class="invalid-feedback">
-                            @if($errors->has('password'))
-                                <p class="text-danger">{{$errors->first('password')}}</p>
+                            @if($errors->has('alamat'))
+                                <p class="text-danger">{{$errors->first('alamat')}}</p>
+                            @endif
+                        </div>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label class="mr-3"><strong>Tempat Lahir</strong></label>
+                        <input type="text" class="form-control" value="{{old('tempat_lahir')}}" name="tempat_lahir">
+                        <div class="invalid-feedback">
+                            @if($errors->has('tempat_lahir'))
+                                <p class="text-danger">{{$errors->first('tempat_lahir')}}</p>
+                            @endif
+                        </div>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label class="mr-3"><strong>Tanggal Lahir</strong></label>
+                        <input type="date" class="form-control" value="{{old('tgllahir')}}" name="tgllahir">
+                        <div class="invalid-feedback">
+                            @if($errors->has('tgllahir'))
+                                <p class="text-danger">{{$errors->first('tgllahir')}}</p>
+                            @endif
+                        </div>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label class="mr-3"><strong>No. Telp</strong></label>
+                        <input type="number" class="form-control" value="{{old('notelp')}}" name="notelp">
+                        <div class="invalid-feedback">
+                            @if($errors->has('notelp'))
+                                <p class="text-danger">{{$errors->first('notelp')}}</p>
                             @endif
                         </div>
                     </div>
@@ -51,6 +93,8 @@
                         <input type="radio" name="user_type" value="teacher" class="form-control mr-3">
                         <label><strong>Teacher</strong></label>
                     </div>
+
+                    <p class="text-danger"><strong>*Wajib diisi !</strong></p>
 
                     <input type="submit" class="btn btn-primary">
                 </form>
@@ -106,7 +150,7 @@
                     {{csrf_field()}}
                     <div class="form-group mb-3">
                         <label class="mr-3"><strong>Kode Pelajaran</strong></label>
-                        <input type="text" class="form-control is-invalid" value="{{old('kode_pelajaran')}}"
+                        <input type="text" class="form-control " value="{{old('kode_pelajaran')}}"
                                name="kode_pelajaran">
                         <div class="invalid-feedback">
                             @if($errors->has('kode_pelajaran'))
@@ -116,7 +160,7 @@
                     </div>
                     <div class="form-group mb-3">
                         <label class="mr-3"><strong>Nama Pelajaran</strong></label>
-                        <input type="text" class="form-control is-invalid" value="{{old('nama_pelajaran')}}"
+                        <input type="text" class="form-control " value="{{old('nama_pelajaran')}}"
                                name="nama_pelajaran">
                         <div class="invalid-feedback">
                             @if($errors->has('nama_pelajaran'))
@@ -156,7 +200,7 @@
                     {{csrf_field()}}
                     <div class="form-group mb-3">
                         <label class="mr-3"><strong>Kode Kelas</strong></label>
-                        <input type="text" class="form-control is-invalid" value="{{old('kode_kelas')}}"
+                        <input type="text" class="form-control " value="{{old('kode_kelas')}}"
                                name="kode_kelas">
                         <div class="invalid-feedback">
                             @if($errors->has('kode_kelas'))
@@ -166,7 +210,7 @@
                     </div>
                     <div class="form-group mb-3">
                         <label class="mr-3"><strong>Nama Kelas</strong></label>
-                        <input type="text" class="form-control  is-invalid" value="{{old('nama_kelas')}}" name="nama_kelas">
+                        <input type="text" class="form-control  " value="{{old('nama_kelas')}}" name="nama_kelas">
                         <div class="invalid-feedback">
                             @if($errors->has('nama_kelas'))
                                 <p class="text-danger">{{$errors->first('nama_kelas')}}</p>

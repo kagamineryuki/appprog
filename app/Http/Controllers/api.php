@@ -72,4 +72,54 @@ class api extends Controller
     public function give_info(Request $request){
         return response()->json(['nisn' => auth()->guard('student')->user()->nisn]);
     }
+
+    public function create_attendance(Request $request){
+        $absensi = new tblAbsensi();
+        $absensi->nisn = $request->nisn;
+        $absensi->id_qr = $request->id_qr;
+        $absensi->save();
+
+        return ["message"=>"Data recorded, have a nice day","error"=>false];
+    }
+
+    public function retrieve_user_info(Request $request){
+        switch($request->user_type){
+            case "student":
+                $user_info = DB::table('tbl_students')->select('nisn','nama','alamat','tanggal_lahir','tempat_lahir','no_telp')->where('nisn', '=', $request->nisn)->first();
+
+                return response()->json($user_info);
+                break;
+            case "teacher":
+                $user_info = DB::table('tbl_teachers')->select('nign','nama','alamat','tanggal_lahir','tempat_lahir','no_telp')->where('nign', '=', $request->nisn)->first();
+
+                return response()->json($user_info);
+                break;
+        }
+    }
+
+    public function update_user_info(Request $request){
+        switch ($request->user_type){
+            case "student":
+                DB::table('tbl_students')->where('nisn','=',$request->nisn)->update([
+                    'nama' => $request->nama,
+                    'alamat' => $request->alamat,
+                    'no_telp' => $request->no_telp,
+                    'tempat_lahir' => $request->tempat_lahir,
+                    'tanggal_lahir' => $request->tanggal_lahir
+                ]);
+                return ['error'=>false,'message'=>"Thank you, your biodata has been updated"];
+                break;
+            case "teacher":
+                DB::table('tbl_teachers')->where('nign','=',$request->nisn)->update([
+                    'nama' => $request->nama,
+                    'alamat' => $request->alamat,
+                    'no_telp' => $request->no_telp,
+                    'tempat_lahir' => $request->tempat_lahir,
+                    'tanggal_lahir' => $request->tanggal_lahir
+                ]);
+                return ['error'=>false,'message'=>"Thank you, your biodata has been updated"];
+                break;
+        }
+        return ['error'=>true,'message'=>"Something wrong happen"];
+    }
 }
