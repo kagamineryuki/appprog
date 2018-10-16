@@ -21,6 +21,7 @@ class CreateTblStudentsTable extends Migration
             $table->text('tempat_lahir')->nullable();
             $table->text('no_telp')->nullable();
             $table->text('password');
+            $table->string('profile_picture',255);
             $table->boolean('isAdmin');
             $table->primary('nisn');
             $table->rememberToken();

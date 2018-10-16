@@ -6,6 +6,7 @@ use App\tblTeacher;
 use App\tblStudent;
 use App\tblPelajaran;
 use App\tblKelas;
+use Faker\Provider\Image;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -75,6 +76,7 @@ class admin extends Controller
                     'nama' => 'required|min:3',
                     'password'=> 'required|min:3',
                     'user_type' => 'required',
+                    'foto_profil' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
                 ];
 
                 $validator = Validator::make($request->all(),$rules);
@@ -84,6 +86,15 @@ class admin extends Controller
                         ->withErrors($validator)
                         ->withInput()->exceptInput('password');
                 } else {
+
+                    if($request->hasFile('foto_profil')){
+                        $file_fullname = $request->file('foto_profil')->getClientOriginalName();
+                        $filename = pathinfo($file_fullname, PATHINFO_FILENAME);
+                        $file_extension = $request->file('foto_profil')->getClientOriginalExtension();
+                        $filename_to_save = time().'_'.$filename.'.'.$file_extension;
+                        $path = $request->file('foto_profil')->storeAs('public/uploads', $filename_to_save);
+                    }
+
                     $tblStudent = new tblStudent();
                     $tblStudent->nisn = $request->username;
                     $tblStudent->password = Hash::make($request->password);
@@ -92,6 +103,7 @@ class admin extends Controller
                     $tblStudent->tanggal_lahir = $request->tgllahir;
                     $tblStudent->tempat_lahir = $request->tempat_lahir;
                     $tblStudent->no_telp = $request->notelp;
+                    $tblStudent->profile_picture = $filename_to_save;
                     $tblStudent->isAdmin = false;
                     $tblStudent->save();
 
@@ -105,6 +117,7 @@ class admin extends Controller
                     'nama' => 'required|min:3',
                     'password'=> 'required|min:3',
                     'user_type' => 'required',
+                    'foto_profil' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
                 ];
 
                 $validator = Validator::make($request->all(),$rules);
@@ -114,6 +127,15 @@ class admin extends Controller
                         ->withErrors($validator)
                         ->withInput()->exceptInput('password');
                 } else {
+
+                    if($request->hasFile('foto_profil')){
+                        $file_fullname = $request->file('foto_profil')->getClientOriginalName();
+                        $filename = pathinfo($file_fullname, PATHINFO_FILENAME);
+                        $file_extension = $request->file('foto_profil')->getClientOriginalExtension();
+                        $filename_to_save = time().'_'.$filename.'.'.$file_extension;
+                        $path = $request->file('foto_profil')->storeAs('public/uploads', $filename_to_save);
+                    }
+
                     $tblTeacher = new tblTeacher();
                     $tblTeacher->nign = $request->username;
                     $tblTeacher->password = Hash::make($request->password);
@@ -122,6 +144,7 @@ class admin extends Controller
                     $tblTeacher->tanggal_lahir = $request->tgllahir;
                     $tblTeacher->tempat_lahir = $request->tempat_lahir;
                     $tblTeacher->no_telp = $request->notelp;
+                    $tblTeacher->profile_picture = $filename_to_save;
                     $tblTeacher->isAdmin = false;
                     $tblTeacher->save();
 

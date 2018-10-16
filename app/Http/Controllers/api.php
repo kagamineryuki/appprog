@@ -85,7 +85,7 @@ class api extends Controller
     public function retrieve_user_info(Request $request){
         switch($request->user_type){
             case "student":
-                $user_info = DB::table('tbl_students')->select('nisn','nama','alamat','tanggal_lahir','tempat_lahir','no_telp')->where('nisn', '=', $request->nisn)->first();
+                $user_info = DB::table('tbl_students')->select('nisn','nama','alamat','tanggal_lahir','tempat_lahir','no_telp','profile_picture')->where('nisn', '=', $request->nisn)->first();
 
                 return response()->json($user_info);
                 break;
@@ -98,6 +98,15 @@ class api extends Controller
     }
 
     public function update_user_info(Request $request){
+
+        if($request->hasFile('foto_profil')){
+            $file_fullname = $request->file('foto_profil')->getClientOriginalName();
+            $filename = pathinfo($file_fullname, PATHINFO_FILENAME);
+            $file_extension = $request->file('foto_profil')->getClientOriginalExtension();
+            $filename_to_save = time().'_'.$filename.'.'.$file_extension;
+            $path = $request->file('foto_profil')->storeAs('public/uploads', $filename_to_save);
+        }
+
         switch ($request->user_type){
             case "student":
                 DB::table('tbl_students')->where('nisn','=',$request->nisn)->update([
@@ -105,7 +114,8 @@ class api extends Controller
                     'alamat' => $request->alamat,
                     'no_telp' => $request->no_telp,
                     'tempat_lahir' => $request->tempat_lahir,
-                    'tanggal_lahir' => $request->tanggal_lahir
+                    'tanggal_lahir' => $request->tanggal_lahir,
+                    'profile_picture' => $filename_to_save
                 ]);
                 return ['error'=>false,'message'=>"Thank you, your biodata has been updated"];
                 break;
@@ -115,7 +125,8 @@ class api extends Controller
                     'alamat' => $request->alamat,
                     'no_telp' => $request->no_telp,
                     'tempat_lahir' => $request->tempat_lahir,
-                    'tanggal_lahir' => $request->tanggal_lahir
+                    'tanggal_lahir' => $request->tanggal_lahir,
+                    'profile_picture' => $filename_to_save
                 ]);
                 return ['error'=>false,'message'=>"Thank you, your biodata has been updated"];
                 break;

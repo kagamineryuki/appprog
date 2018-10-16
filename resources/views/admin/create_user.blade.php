@@ -14,7 +14,7 @@
         <div class="d-flex">
             <div class="container">
                 <h1 class="display-4">User</h1>
-                <form method="POST" action="/admin/admin_dashboard/create_user/proceed/create_user">
+                <form method="POST" action="/admin/admin_dashboard/create_user/proceed/create_user" enctype="multipart/form-data">
                     {{csrf_field()}}
                     <div class="form-group mb-3">
                         <label class="mr-3"><strong>NISN / NIGN*</strong></label>
@@ -83,6 +83,16 @@
                         <div class="invalid-feedback">
                             @if($errors->has('notelp'))
                                 <p class="text-danger">{{$errors->first('notelp')}}</p>
+                            @endif
+                        </div>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label class="mr-3"><strong>Foto Profil</strong></label>
+                        <input type="file" class="form-control-file" name="foto_profil">
+                        <div class="invalid-feedback">
+                            @if($errors->has('foto_profil'))
+                                <p class="text-danger">{{$errors->first('foto_profil')}}</p>
                             @endif
                         </div>
                     </div>

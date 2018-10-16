@@ -19,6 +19,7 @@ class CreateTblTeachersTable extends Migration
             $table->longText('alamat')->nullable();
             $table->date('tanggal_lahir')->nullable();
             $table->text('tempat_lahir')->nullable();
+            $table->string('profile_picture',255);
             $table->text('no_telp')->nullable();
             $table->text('password');
             $table->boolean('isAdmin');
