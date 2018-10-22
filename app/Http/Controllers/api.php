@@ -5,14 +5,18 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\tblAbsensi;
 use App\tblStudent;
+use App\tblPelajaran;
+use App\tblKelas;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Validator;
 
 
 class api extends Controller
 {
+//  all user function
     public function verify_user(Request $request){
         $query = DB::table('tbl_students')->select('nisn','password','nama')->where('nisn',$request->username)->first();
 
@@ -33,6 +37,85 @@ class api extends Controller
 
             return $result;
         }
+    }
+
+    public function retrieve_user_info(Request $request){
+        switch($request->user_type){
+            case "student":
+                $user_info = DB::table('tbl_students')->select('nisn','nama','alamat','tanggal_lahir','tempat_lahir','no_telp','profile_picture')->where('nisn', '=', $request->nisn)->first();
+
+                return response()->json($user_info);
+                break;
+            case "teacher":
+                $user_info = DB::table('tbl_teachers')->select('nign','nama','alamat','tanggal_lahir','tempat_lahir','no_telp')->where('nign', '=', $request->nisn)->first();
+
+                return response()->json($user_info);
+                break;
+        }
+    }
+
+    public function update_user_info(Request $request){
+
+        $rules = [
+            'nama' => 'required|Min:2',
+            'nisn' => 'required',
+            'user_type' => 'required'
+        ];
+
+        $validator = Validator::make($request->all(),$rules);
+
+        if ($validator->fails()){
+            return response()->json(['error'=>true,'message'=>$validator->errors()]);
+        } else {
+            switch ($request->user_type){
+                case "student":
+                    DB::table('tbl_students')->where('nisn','=',$request->nisn)->update([
+                        'nama' => $request->nama,
+                        'alamat' => $request->alamat,
+                        'no_telp' => $request->no_telp,
+                        'tempat_lahir' => $request->tempat_lahir,
+                        'tanggal_lahir' => $request->tanggal_lahir,
+//                    'profile_picture' => $filename_to_save
+                    ]);
+
+                    return ['error'=>false,'message'=>"Thank you, your biodata has been updated",'user_type'=>$request->user_type];
+//                return dd($request);
+                    break;
+
+                case "teacher":
+                    DB::table('tbl_teachers')->where('nign','=',$request->nisn)->update([
+                        'nama' => $request->nama,
+                        'alamat' => $request->alamat,
+                        'no_telp' => $request->no_telp,
+                        'tempat_lahir' => $request->tempat_lahir,
+                        'tanggal_lahir' => $request->tanggal_lahir,
+//                    'profile_picture' => $filename_to_save
+                    ]);
+                    return ['error'=>false,'message'=>"Thank you, your biodata has been updated"];
+                    break;
+            }
+        }
+        return redirect(view('admin.change_data'))->with(['error'=>true,'message'=>"Something wrong happen"]);
+    }
+
+    public function give_info(Request $request){
+        return response()->json(['nisn' => auth()->guard('student')->user()->nisn]);
+    }
+
+//  all attendance related
+    public function create_attendance(Request $request){
+        $absensi = new tblAbsensi();
+        $absensi->nisn = $request->nisn;
+        $absensi->id_qr = $request->id_qr;
+        $absensi->save();
+
+        return ["message"=>"Data recorded, have a nice day","error"=>false];
+    }
+
+    public function get_last_10_attendance(Request $request){
+        $query = DB::select("CALL stDetails(:nisn)",['nisn'=>$request->nisn]);
+
+        return response()->json($query);
     }
 
     public function receive_qr(Request $request){
@@ -69,68 +152,83 @@ class api extends Controller
         return $data;
     }
 
-    public function give_info(Request $request){
-        return response()->json(['nisn' => auth()->guard('student')->user()->nisn]);
-    }
+//  all lesson related
+    public function retrieve_pelajaran_info(Request $request){
+        $rules = [
+            'no_pelajaran' => 'required'
+        ];
 
-    public function create_attendance(Request $request){
-        $absensi = new tblAbsensi();
-        $absensi->nisn = $request->nisn;
-        $absensi->id_qr = $request->id_qr;
-        $absensi->save();
+        $validator = Validator::make($request->all(),$rules);
 
-        return ["message"=>"Data recorded, have a nice day","error"=>false];
-    }
+        if($validator->fails()){
+            return response()->json(['error' => true, 'message' => $validator->errors()]);
+        } else {
+            $data = DB::table('tbl_pelajarans')->select('nama_pelajaran')->where('kode_pelajaran', '=', $request->no_pelajaran)->get();
 
-    public function retrieve_user_info(Request $request){
-        switch($request->user_type){
-            case "student":
-                $user_info = DB::table('tbl_students')->select('nisn','nama','alamat','tanggal_lahir','tempat_lahir','no_telp','profile_picture')->where('nisn', '=', $request->nisn)->first();
-
-                return response()->json($user_info);
-                break;
-            case "teacher":
-                $user_info = DB::table('tbl_teachers')->select('nign','nama','alamat','tanggal_lahir','tempat_lahir','no_telp')->where('nign', '=', $request->nisn)->first();
-
-                return response()->json($user_info);
-                break;
+            if (!$data->count()){
+                return response()->json(['error' => true, 'message' => ["Data not found"]]);
+            } else {
+                return response()->json($data);
+            }
         }
     }
 
-    public function update_user_info(Request $request){
+    public function update_pelajaran_info(Request $request){
+        $rules = [
+            'kode_pelajaran' => 'required',
+            'nama_pelajaran' => 'required'
+        ];
 
-        if($request->hasFile('foto_profil')){
-            $file_fullname = $request->file('foto_profil')->getClientOriginalName();
-            $filename = pathinfo($file_fullname, PATHINFO_FILENAME);
-            $file_extension = $request->file('foto_profil')->getClientOriginalExtension();
-            $filename_to_save = time().'_'.$filename.'.'.$file_extension;
-            $path = $request->file('foto_profil')->storeAs('public/uploads', $filename_to_save);
-        }
+        $validator = Validator::make($request->all(), $rules);
 
-        switch ($request->user_type){
-            case "student":
-                DB::table('tbl_students')->where('nisn','=',$request->nisn)->update([
-                    'nama' => $request->nama,
-                    'alamat' => $request->alamat,
-                    'no_telp' => $request->no_telp,
-                    'tempat_lahir' => $request->tempat_lahir,
-                    'tanggal_lahir' => $request->tanggal_lahir,
-                    'profile_picture' => $filename_to_save
-                ]);
-                return ['error'=>false,'message'=>"Thank you, your biodata has been updated"];
-                break;
-            case "teacher":
-                DB::table('tbl_teachers')->where('nign','=',$request->nisn)->update([
-                    'nama' => $request->nama,
-                    'alamat' => $request->alamat,
-                    'no_telp' => $request->no_telp,
-                    'tempat_lahir' => $request->tempat_lahir,
-                    'tanggal_lahir' => $request->tanggal_lahir,
-                    'profile_picture' => $filename_to_save
-                ]);
-                return ['error'=>false,'message'=>"Thank you, your biodata has been updated"];
-                break;
+        if($validator->fails()){
+            return response()->json(['error' => true, 'message' => $validator->errors()]);
+        } else {
+            DB::table('tbl_pelajarans')
+                ->where('kode_pelajaran', $request->kode_pelajaran)
+                ->update(['nama_pelajaran'=>$request->nama_pelajaran]);
+
+            return response()->json(['error' => false, 'message' => "Data has been updated!"]);
         }
-        return ['error'=>true,'message'=>"Something wrong happen"];
+    }
+
+//  all class related
+    public function retrieve_kelas_info(Request $request){
+        $rules = [
+            'kode_kelas' => 'required'
+        ];
+
+        $validator = Validator::make($request->all(),$rules);
+
+        if($validator->fails()){
+            return response()->json(['error' => true, 'message' => $validator->errors()]);
+        } else {
+            $data = DB::table('tbl_kelas')->select('nama_kelas')->where('kode_kelas', '=', $request->kode_kelas)->get();
+
+            if (!$data->count()){
+                return response()->json(['error' => true, 'message' => ["Data not found"]]);
+            } else {
+                return response()->json($data);
+            }
+        }
+    }
+
+    public function update_kelas_info(Request $request){
+        $rules = [
+            'kode_kelas' => 'required',
+            'nama_kelas' => 'required'
+        ];
+
+        $validator = Validator::make($request->all(), $rules);
+
+        if($validator->fails()){
+            return response()->json(['error' => true, 'message' => $validator->errors()]);
+        } else {
+            DB::table('tbl_kelas')
+                ->where('kode_kelas', $request->kode_kelas)
+                ->update(['nama_kelas'=>$request->nama_kelas]);
+
+            return response()->json(['error' => false, 'message' => "Data has been updated!"]);
+        }
     }
 }

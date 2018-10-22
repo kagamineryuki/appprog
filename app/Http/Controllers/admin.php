@@ -21,6 +21,32 @@ class admin extends Controller
         return view('admin.welcome');
     }
 
+    public function show_dashboard(){
+        $student = DB::table('tbl_students')->select('nisn','nama')->get();
+        $teacher = DB::table('tbl_teachers')->select('nign','nama')->get();
+        $pelajaran = DB::table('tbl_pelajarans')->select('kode_pelajaran','nama_pelajaran')->get();
+        $kelas = DB::table('tbl_kelas')->select('kode_kelas','nama_kelas')->get();
+
+        return view('admin.admin_dashboard')->with(['students'=>$student,'teachers'=>$teacher,'pelajaran'=>$pelajaran,'kelas'=>$kelas]);
+    }
+
+    public function show_create_user_page(){
+        $student = DB::table('tbl_students')->select('nisn','nama')->get();
+        $teacher = DB::table('tbl_teachers')->select('nign','nama')->get();
+        $pelajaran = DB::table('tbl_pelajarans')->select('kode_pelajaran','nama_pelajaran')->get();
+        $kelas = DB::table('tbl_kelas')->select('kode_kelas','nama_kelas')->get();
+
+        return view('admin.create_user')->with(['students'=>$student,'teachers'=>$teacher,'pelajaran'=>$pelajaran,'kelas'=>$kelas]);
+    }
+
+    public function show_change_user_page(){
+        return view('admin.change_data');
+    }
+
+    public function show_delete_user_page(){
+        return view('admin.delete_data');
+    }
+
     public function do_login(Request $request){
         $rules = [
             'username' => 'required',
@@ -49,24 +75,6 @@ class admin extends Controller
         return redirect('/admin');
     }
 
-    public function show_dashboard(){
-        $student = DB::table('tbl_students')->select('nisn','nama')->get();
-        $teacher = DB::table('tbl_teachers')->select('nign','nama')->get();
-        $pelajaran = DB::table('tbl_pelajarans')->select('kode_pelajaran','nama_pelajaran')->get();
-        $kelas = DB::table('tbl_kelas')->select('kode_kelas','nama_kelas')->get();
-
-        return view('admin.admin_dashboard')->with(['students'=>$student,'teachers'=>$teacher,'pelajaran'=>$pelajaran,'kelas'=>$kelas]);
-    }
-
-    public function show_create_user_page(){
-        $student = DB::table('tbl_students')->select('nisn','nama')->get();
-        $teacher = DB::table('tbl_teachers')->select('nign','nama')->get();
-        $pelajaran = DB::table('tbl_pelajarans')->select('kode_pelajaran','nama_pelajaran')->get();
-        $kelas = DB::table('tbl_kelas')->select('kode_kelas','nama_kelas')->get();
-
-        return view('admin.create_user')->with(['students'=>$student,'teachers'=>$teacher,'pelajaran'=>$pelajaran,'kelas'=>$kelas]);
-    }
-
     public function do_create_user(Request $request){
 
         switch ($request->user_type){
@@ -87,15 +95,17 @@ class admin extends Controller
                         ->withInput()->exceptInput('password');
                 } else {
 
+                    $tblStudent = new tblStudent();
+
                     if($request->hasFile('foto_profil')){
                         $file_fullname = $request->file('foto_profil')->getClientOriginalName();
                         $filename = pathinfo($file_fullname, PATHINFO_FILENAME);
                         $file_extension = $request->file('foto_profil')->getClientOriginalExtension();
                         $filename_to_save = time().'_'.$filename.'.'.$file_extension;
                         $path = $request->file('foto_profil')->storeAs('public/uploads', $filename_to_save);
+                        $tblStudent->profile_picture = $filename_to_save;
                     }
 
-                    $tblStudent = new tblStudent();
                     $tblStudent->nisn = $request->username;
                     $tblStudent->password = Hash::make($request->password);
                     $tblStudent->nama = $request->nama;
@@ -103,8 +113,8 @@ class admin extends Controller
                     $tblStudent->tanggal_lahir = $request->tgllahir;
                     $tblStudent->tempat_lahir = $request->tempat_lahir;
                     $tblStudent->no_telp = $request->notelp;
-                    $tblStudent->profile_picture = $filename_to_save;
                     $tblStudent->isAdmin = false;
+                    $tblStudent->profile_picture = "question_mark.png";
                     $tblStudent->save();
 
                     return redirect('/admin/admin_dashboard/create_user');
@@ -127,6 +137,7 @@ class admin extends Controller
                         ->withErrors($validator)
                         ->withInput()->exceptInput('password');
                 } else {
+                    $tblTeacher = new tblTeacher();
 
                     if($request->hasFile('foto_profil')){
                         $file_fullname = $request->file('foto_profil')->getClientOriginalName();
@@ -134,9 +145,10 @@ class admin extends Controller
                         $file_extension = $request->file('foto_profil')->getClientOriginalExtension();
                         $filename_to_save = time().'_'.$filename.'.'.$file_extension;
                         $path = $request->file('foto_profil')->storeAs('public/uploads', $filename_to_save);
+
+                        $tblTeacher->profile_picture = $filename_to_save;
                     }
 
-                    $tblTeacher = new tblTeacher();
                     $tblTeacher->nign = $request->username;
                     $tblTeacher->password = Hash::make($request->password);
                     $tblTeacher->nama = $request->nama;
@@ -144,7 +156,7 @@ class admin extends Controller
                     $tblTeacher->tanggal_lahir = $request->tgllahir;
                     $tblTeacher->tempat_lahir = $request->tempat_lahir;
                     $tblTeacher->no_telp = $request->notelp;
-                    $tblTeacher->profile_picture = $filename_to_save;
+                    $tblTeacher->profile_picture = "question_mark.png";
                     $tblTeacher->isAdmin = false;
                     $tblTeacher->save();
 

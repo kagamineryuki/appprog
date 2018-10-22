@@ -41,10 +41,10 @@
                 </li>
             </a>
 
-            <a href="#">
-                <li class="list-group-item ">Update Items</li>
+            <a href="/admin/admin_dashboard/change_user">
+                <li class="list-group-item {{Request::is('admin/admin_dashboard/change_user')? 'active' : '' }}">Update Items</li>
             </a>
-            <a href="#">
+            <a href="/admin/admin_dashboard/delete_user">
                 <li class="list-group-item bg-danger text-light">Delete Items</li>
             </a>
 

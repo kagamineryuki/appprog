@@ -11,6 +11,7 @@
     <div class="bg-white container-fluid align-items-stretch p-4" id="contents-dashboard">
         <h1 class="display-4">Create Data</h1>
         <hr>
+        {{--Create users for student and teacher--}}
         <div class="d-flex">
             <div class="container">
                 <h1 class="display-4">User</h1>
@@ -109,6 +110,8 @@
                     <input type="submit" class="btn btn-primary">
                 </form>
             </div>
+
+            {{--All student and teacher data--}}
             <div class="d-flex container">
                 <div class="mr-5">
                     <h1 class="display-4">Students</h1>
@@ -153,13 +156,14 @@
             </div>
         </div>
         <hr>
+        {{--Create items for lesson--}}
         <div class="d-flex">
             <div class="container">
                 <h1 class="display-4">Pelajaran</h1>
                 <form method="POST" action="/admin/admin_dashboard/create_user/proceed/create_pelajaran">
                     {{csrf_field()}}
                     <div class="form-group mb-3">
-                        <label class="mr-3"><strong>Kode Pelajaran</strong></label>
+                        <label class="mr-3"><strong>Kode Pelajaran*</strong></label>
                         <input type="text" class="form-control " value="{{old('kode_pelajaran')}}"
                                name="kode_pelajaran">
                         <div class="invalid-feedback">
@@ -169,7 +173,7 @@
                         </div>
                     </div>
                     <div class="form-group mb-3">
-                        <label class="mr-3"><strong>Nama Pelajaran</strong></label>
+                        <label class="mr-3"><strong>Nama Pelajaran*</strong></label>
                         <input type="text" class="form-control " value="{{old('nama_pelajaran')}}"
                                name="nama_pelajaran">
                         <div class="invalid-feedback">
@@ -179,9 +183,12 @@
                         </div>
                     </div>
 
+                    <p class="text-danger"><strong>*Wajib diisi !</strong></p>
+
                     <input type="submit" class="btn btn-primary">
                 </form>
             </div>
+            {{--List of lessons--}}
             <div class="container">
                 <table class="table table-striped table-bordered">
                     <thead class="thead-dark">
@@ -203,13 +210,14 @@
             </div>
         </div>
         <hr>
+        {{--Create items for class--}}
         <div class="d-flex">
             <div class="container">
                 <h1 class="display-4">Kelas</h1>
                 <form method="POST" action="/admin/admin_dashboard/create_user/proceed/create_kelas">
                     {{csrf_field()}}
                     <div class="form-group mb-3">
-                        <label class="mr-3"><strong>Kode Kelas</strong></label>
+                        <label class="mr-3"><strong>Kode Kelas*</strong></label>
                         <input type="text" class="form-control " value="{{old('kode_kelas')}}"
                                name="kode_kelas">
                         <div class="invalid-feedback">
@@ -219,7 +227,7 @@
                         </div>
                     </div>
                     <div class="form-group mb-3">
-                        <label class="mr-3"><strong>Nama Kelas</strong></label>
+                        <label class="mr-3"><strong>Nama Kelas*</strong></label>
                         <input type="text" class="form-control  " value="{{old('nama_kelas')}}" name="nama_kelas">
                         <div class="invalid-feedback">
                             @if($errors->has('nama_kelas'))
@@ -228,9 +236,12 @@
                         </div>
                     </div>
 
+                    <p class="text-danger"><strong>*Wajib diisi !</strong></p>
+
                     <input type="submit" class="btn btn-primary">
                 </form>
             </div>
+            {{--List of classes--}}
             <div class="container">
                 <table class="table table-striped table-bordered">
                     <thead class="thead-dark">
