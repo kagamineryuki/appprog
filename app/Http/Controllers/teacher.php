@@ -15,7 +15,18 @@ use App\tblCode;
 class teacher extends Controller
 {
     public function show_dashboard(){
-        return view("teacher.teacher_dashboard");
+        $user_info = DB::table('tbl_teachers')->select('nign','nama','alamat','tanggal_lahir','tempat_lahir','no_telp','profile_picture')->where(['nign'=> auth()->guard('teacher')->user()->nign,'soft_delete'=>'0'])->first();
+
+        return view("teacher.teacher_dashboard")
+            ->with([
+            'profile_picture'=>$user_info->profile_picture,
+            'nign'=>$user_info->nign,
+            'nama'=>$user_info->nama,
+            'alamat'=>$user_info->alamat,
+            'tanggal_lahir'=>$user_info->tanggal_lahir,
+            'tempat_lahir'=>$user_info->tempat_lahir,
+            'no_telp'=>$user_info->no_telp,
+        ]);
     }
 
     public function show_generate_qr_code(){

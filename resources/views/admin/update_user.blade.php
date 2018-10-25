@@ -11,7 +11,6 @@
     <div class="bg-white container-fluid align-items-stretch p-4" id="contents-dashboard">
         <h1 class="display-4">Update</h1>
         <br>
-        <
 
     </div>
 

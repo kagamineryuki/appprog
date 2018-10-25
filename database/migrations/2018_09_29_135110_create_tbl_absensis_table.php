@@ -24,6 +24,7 @@ class CreateTblAbsensisTable extends Migration
             $table->foreign('id_qr')->references('id_qr')->on('tbl_codes');
 
             $table->timestamps();
+            $table->boolean('soft_delete')->default(false);
         });
     }
 

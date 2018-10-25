@@ -17,6 +17,7 @@ class CreateTblPelajaransTable extends Migration
             $table->string('kode_pelajaran')->unique();
             $table->text('nama_pelajaran');
             $table->primary('kode_pelajaran');
+            $table->boolean('soft_delete')->default(false);
         });
     }
 

@@ -37,6 +37,22 @@ class login extends Controller
         return view('student_dashboard')->with(['data'=>$data]);
     }
 
+    public function show_student_profile(){
+
+        $user_info = DB::table('tbl_students')->select('nisn','nama','alamat','tanggal_lahir','tempat_lahir','no_telp','profile_picture')->where(['nisn'=> auth()->guard('student')->user()->nisn,'soft_delete'=>'0'])->first();
+
+        return view('student_profile')
+            ->with([
+                'profile_picture'=>$user_info->profile_picture,
+                'nisn'=>$user_info->nisn,
+                'nama'=>$user_info->nama,
+                'alamat'=>$user_info->alamat,
+                'tanggal_lahir'=>$user_info->tanggal_lahir,
+                'tempat_lahir'=>$user_info->tempat_lahir,
+                'no_telp'=>$user_info->no_telp,
+            ]);
+    }
+
     public function process_login(Request $request){
         $rules = array(
             'username' => 'required',
@@ -72,7 +88,7 @@ class login extends Controller
                     );
 
                     if (Auth::guard('teacher')->attempt($userdata, $request->remember)){
-                        return redirect('/teacher/teacher_dashboard');
+                        return redirect('/teacher/teacher_dashboard/history');
                     } else {
                         return redirect('/');
                     }

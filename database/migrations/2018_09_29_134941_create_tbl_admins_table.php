@@ -24,6 +24,7 @@ class CreateTblAdminsTable extends Migration
             $table->boolean('isAdmin');
             $table->primary('no_pegawai');
             $table->rememberToken();
+            $table->boolean('soft_delete')->default(false);
         });
     }
 

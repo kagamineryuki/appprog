@@ -22,12 +22,14 @@ Route::group(['middleware' => ['user_login:teacher','web']], function() {
     Route::post('/teacher/teacher_dashboard/generate_qr_code/proceed', array('uses' => 'teacher@generate_qr'));
     Route::get('/teacher/teacher_dashboard/history', array('uses' => 'teacher@show_history'));
     Route::get('/teacher/teacher_dashboard/logout', array('uses' => 'teacher@do_logout'));
+    Route::get('/teacher/profile',array('uses' => 'teacher@show_profile'));
 });
 
 //student
 Route::group(['middleware' => ['user_login:student','web'] ], function() {
     Route::get('/student/student_dashboard/logout', array('uses' => 'login@process_logout'));
     Route::get('/student/student_dashboard', array('uses' => 'login@show_student_dashboard'));
+    Route::get('/student/student_dashboard/student_profile', array('uses' => 'login@show_student_profile'));
 });
 
 //admin
@@ -49,6 +51,7 @@ Route::post('/student/get_nisn', array('uses'=>'api@give_info'))->middleware('we
 Route::post('/api/verify_user', array('uses'=>'api@verify_user'));
 Route::post('/api/retrieve_user_info', array('uses'=>'api@retrieve_user_info'));
 Route::post('/api/update_user_info', array('uses'=>'api@update_user_info'));
+Route::post('/api/delete_user_info', array('uses'=>'api@delete_user_info'));
 
 //all attendance things
 Route::post('/student/submit_qr', array('uses'=>'api@receive_qr'))->middleware('web');
@@ -58,10 +61,12 @@ Route::post('/api/get_last_10_attendance', array('uses'=>'api@get_last_10_attend
 //all lesson things
 Route::post('/api/retrieve_pelajaran_info', array('uses'=>'api@retrieve_pelajaran_info'));
 Route::post('/api/update_pelajaran_info', array('uses'=>'api@update_pelajaran_info'));
+Route::post('/api/delete_pelajaran_info', array('uses'=>'api@delete_pelajaran_info'));
 
-//all lesson things
+//all class things
 Route::post('/api/retrieve_kelas_info', array('uses'=>'api@retrieve_kelas_info'));
 Route::post('/api/update_kelas_info', array('uses'=>'api@update_kelas_info'));
+Route::post('/api/delete_kelas_info', array('uses'=>'api@delete_kelas_info'));
 
 //submit form to controller
 Route::post('login',array('uses' => 'login@process_login'));

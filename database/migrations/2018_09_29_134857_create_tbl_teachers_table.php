@@ -25,6 +25,7 @@ class CreateTblTeachersTable extends Migration
             $table->boolean('isAdmin');
             $table->primary('nign');
             $table->rememberToken();
+            $table->boolean('soft_delete')->default(false);
         });
     }
 

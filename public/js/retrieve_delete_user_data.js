@@ -60,20 +60,20 @@
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 549);
+/******/ 	return __webpack_require__(__webpack_require__.s = 551);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 549:
+/***/ 551:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(550);
+module.exports = __webpack_require__(552);
 
 
 /***/ }),
 
-/***/ 550:
+/***/ 552:
 /***/ (function(module, exports, __webpack_require__) {
 
 window.$ = window.jQuery = __webpack_require__(91);
@@ -106,23 +106,23 @@ $(document).ready(function () {
         }
     });
     button_submit_user.on("click", function () {
-        tempat_lahir = $("#tempat_lahir");
-        tanggal_lahir = $("#tgllahir");
-        no_telp = $("#notelp");
         nama = $("#nama");
-        alamat = $("#alamat");
+        var confirmation;
 
-        data = {
-            nisn: username.val(),
-            user_type: user_type.val(),
-            nama: nama.val(),
-            alamat: alamat.val(),
-            no_telp: no_telp.val(),
-            tempat_lahir: tempat_lahir.val(),
-            tanggal_lahir: tanggal_lahir.val()
-        };
-        console.log(data);
-        set_user_data(data);
+        confirmation = confirm("ARE YOU SURE YOU WANT TO DELETE IT ? (CHANGE IS IRREVERSIBLE!)");
+
+        if (confirmation == true) {
+            data = {
+                nisn: username.val(),
+                user_type: user_type.val(),
+                nama: nama.val(),
+                soft_delete: true
+            };
+            console.log(data);
+            set_user_data(data);
+        } else {
+            form.empty();
+        }
     });
 
     button_retrieve_pelajaran.on("click", function () {
@@ -139,13 +139,20 @@ $(document).ready(function () {
     });
     button_submit_pelajaran.on("click", function () {
         nama_pelajaran = $("#nama_pelajaran");
+        var confirmation;
 
-        data = {
-            kode_pelajaran: no_pelajaran.val(),
-            nama_pelajaran: nama_pelajaran.val()
-        };
+        confirmation = confirm("ARE YOU SURE YOU WANT TO DELETE IT ? (CHANGE IS IRREVERSIBLE!)");
 
-        set_lesson_data(data);
+        if (confirmation == true) {
+            data = {
+                kode_pelajaran: no_pelajaran.val(),
+                nama_pelajaran: nama_pelajaran.val()
+            };
+
+            set_lesson_data(data);
+        } else {
+            form_pelajaran.empty();
+        }
     });
 
     button_retrieve_kelas.on("click", function () {
@@ -163,17 +170,23 @@ $(document).ready(function () {
     button_submit_kelas.on("click", function () {
         nama_kelas = $("#nama_kelas");
 
-        console.log(nama_kelas);
+        confirmation = confirm("ARE YOU SURE YOU WANT TO DELETE IT ? (CHANGE IS IRREVERSIBLE!)");
 
-        data = {
-            kode_kelas: kode_kelas.val(),
-            nama_kelas: nama_kelas.val()
-        };
+        if (confirmation == true) {
+            console.log(nama_kelas);
 
-        set_class_data(data);
+            data = {
+                kode_kelas: kode_kelas.val(),
+                nama_kelas: nama_kelas.val()
+            };
+
+            set_class_data(data);
+        } else {
+            form_kelas.empty();
+        }
     });
 
-    //  function for request & change user data
+    //  function for request & DELETE user data
     function get_user_data(user_type, nisn) {
         switch (user_type) {
             case "student":
@@ -237,7 +250,7 @@ $(document).ready(function () {
 
     function set_user_data(data) {
         $.ajax({
-            url: 'http://absensi.test/api/update_user_info',
+            url: 'http://absensi.test/api/delete_user_info',
             method: 'POST',
             dataType: 'json',
             data: data,
@@ -250,6 +263,7 @@ $(document).ready(function () {
                     });
                 } else {
                     alert(data.message);
+                    form.empty();
                 }
                 console.log(data);
             },
@@ -260,7 +274,7 @@ $(document).ready(function () {
         });
     }
 
-    //  function for request & change lesson data
+    //  function for request & DELETE lesson data
     function get_lesson_data(data) {
         $.ajax({
             url: "http://absensi.test/api/retrieve_pelajaran_info",
@@ -293,7 +307,7 @@ $(document).ready(function () {
 
     function set_lesson_data(data) {
         $.ajax({
-            url: 'http://absensi.test/api/update_pelajaran_info',
+            url: 'http://absensi.test/api/delete_pelajaran_info',
             method: 'POST',
             dataType: 'json',
             data: data,
@@ -306,6 +320,8 @@ $(document).ready(function () {
                     });
                 } else {
                     alert(data.message);
+                    form_pelajaran.empty();
+                    button_submit_pelajaran.css('visibility', 'hidden');
                 }
                 console.log(data);
             },
@@ -349,7 +365,7 @@ $(document).ready(function () {
 
     function set_class_data(data) {
         $.ajax({
-            url: 'http://absensi.test/api/update_kelas_info',
+            url: 'http://absensi.test/api/delete_kelas_info',
             method: 'POST',
             dataType: 'json',
             data: data,
@@ -362,6 +378,8 @@ $(document).ready(function () {
                     });
                 } else {
                     alert(data.message);
+                    $("#submit_kelas").css('visibility', 'hidden');
+                    form_kelas.empty();
                 }
                 console.log(data);
             },

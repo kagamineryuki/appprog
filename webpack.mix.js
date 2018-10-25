@@ -14,6 +14,7 @@ const mix = require('laravel-mix');
 mix.js('resources/js/app.js', 'public/js')
     .js('resources/js/qrcode.js', 'public/js')
     .js('resources/js/retrieve_change_user_data.js', 'public/js')
+    .js('resources/js/retrieve_delete_user_data.js', 'public/js')
    .sass('resources/sass/app.scss', 'public/css');
 
 mix.webpackConfig({

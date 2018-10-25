@@ -1,5 +1,5 @@
 @extends('template')
-@extends('teacher.dashboard_template')
+@extends('student_template')
 
 @section('header')
     <link rel="stylesheet" type="text/css" href="{{asset("css/app.css")}}">
@@ -12,14 +12,14 @@
             <h1 class="display-4">About Me</h1>
             <hr>
             <form method="POST" action="/api/update_user_info" enctype="multipart/form-data">
-            <div class="d-flex">
-                <div class="container col-8">
+                <div class="d-flex">
+                    <div class="container col-8">
                         {{csrf_field()}}
                         <div class="form-row">
                             <div class="form-group mb-3 col-2">
                                 <label class="mr-3"><strong>NIGN</strong></label>
-                                <input type="text" class="form-control " name="nign"
-                                       value="{{$nign}}" readonly>
+                                <input type="text" class="form-control " name="nisn"
+                                       value="{{$nisn}}" readonly>
                                 <div class="invalid-feedback">
                                     @if($errors->has('username'))
                                         <p class="text-danger">{{$errors->first('username')}}</p>
@@ -80,25 +80,25 @@
                             </div>
                         </div>
 
-                        <input type="hidden" name="user_type" value="teacher">
+                        <input type="hidden" name="user_type" value="student">
 
                         <input type="submit" class="btn btn-primary">
 
-                </div>
-                <div class="container col-4">
-                    <div class="form-group mb-3">
-                        <label class="mr-3"><strong>Foto Profil</strong></label>
-                        <br>
-                        <img src="/storage/uploads/{{$profile_picture}}" class="rounded-circle mb-2 border" style="width:100px">
-                        <input type="file" class="form-control-file" name="foto_profil">
-                        <div class="invalid-feedback">
-                            @if($errors->has('foto_profil'))
-                                <p class="text-danger">{{$errors->first('foto_profil')}}</p>
-                            @endif
+                    </div>
+                    <div class="container col-4">
+                        <div class="form-group mb-3">
+                            <label class="mr-3"><strong>Foto Profil</strong></label>
+                            <br>
+                            <img src="/storage/uploads/{{$profile_picture}}" class="rounded-circle mb-2 border" style="width:100px">
+                            <input type="file" class="form-control-file" name="foto_profil">
+                            <div class="invalid-feedback">
+                                @if($errors->has('foto_profil'))
+                                    <p class="text-danger">{{$errors->first('foto_profil')}}</p>
+                                @endif
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
             </form>
         </div>
     </div>

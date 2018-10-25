@@ -23,6 +23,7 @@ class CreateTblIjinsTable extends Migration
             $table->integer('valid_until');
 
             $table->timestamps();
+            $table->boolean('soft_delete')->default(false);
         });
     }
 

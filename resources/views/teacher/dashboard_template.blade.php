@@ -20,8 +20,6 @@
             {{ Auth::guard('teacher')->user()->nama }}
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Action</a>
-            <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="/teacher/teacher_dashboard/logout">Logout</a>
         </div>
     </div>

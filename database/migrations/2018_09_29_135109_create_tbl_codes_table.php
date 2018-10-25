@@ -30,6 +30,7 @@ class CreateTblCodesTable extends Migration
             $table->foreign('kode_kelas')->references('kode_kelas')->on('tbl_kelas');
 
             $table->timestamps();
+            $table->boolean('soft_delete')->default(false);
         });
     }
 

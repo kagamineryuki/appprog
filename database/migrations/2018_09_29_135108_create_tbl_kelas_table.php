@@ -17,6 +17,7 @@ class CreateTblKelasTable extends Migration
             $table->string('kode_kelas')->unique();
             $table->text('nama_kelas');
             $table->primary('kode_kelas');
+            $table->boolean('soft_delete')->default(false);
         });
     }
 
