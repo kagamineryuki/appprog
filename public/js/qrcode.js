@@ -65223,7 +65223,7 @@ $(document).ready(function () {
     function send_data(nisn, content) {
 
         $.ajax({
-            url: './submit_qr',
+            url: 'student/submit_qr',
             method: 'POST',
             async: false,
             dataType: 'json',

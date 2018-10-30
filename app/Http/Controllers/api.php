@@ -54,7 +54,7 @@ class api extends Controller
                 return response()->json($user_info);
                 break;
             case "teacher":
-                $user_info = DB::table('tbl_teachers')->select('nign', 'nama', 'alamat', 'tanggal_lahir', 'tempat_lahir', 'no_telp', 'profile_picture')->where(['nign' => $request->nisn, 'soft_delete' => '0'])->first();
+                $user_info = DB::table('tbl_teachers')->select('nign', 'nama', 'alamat', 'tanggal_lahir', 'tempat_lahir', 'no_telp', 'profile_picture')->where(['nign' => $request->nign, 'soft_delete' => '0'])->first();
 
                 return response()->json($user_info);
                 break;
@@ -91,18 +91,29 @@ class api extends Controller
                             $file_extension = $request->file('foto_profil')->getClientOriginalExtension();
                             $filename_to_save = time() . '_' . $filename . '.' . $file_extension;
                             $path = $request->file('foto_profil')->storeAs('public/uploads', $filename_to_save);
+
+                            DB::table('tbl_students')->where('nisn', '=', $request->nisn)->update([
+                                'nama' => $request->nama,
+                                'alamat' => $request->alamat,
+                                'no_telp' => $request->no_telp,
+                                'tempat_lahir' => $request->tempat_lahir,
+                                'tanggal_lahir' => $request->tanggal_lahir,
+                                'profile_picture' => $filename_to_save
+                            ]);
+                            return ['error' => false, 'message' => "Thank you, your biodata has been updated", 'user_type' => $request->user_type];
+
+                        } else {
+                            DB::table('tbl_students')->where('nisn', '=', $request->nisn)->update([
+                                'nama' => $request->nama,
+                                'alamat' => $request->alamat,
+                                'no_telp' => $request->no_telp,
+                                'tempat_lahir' => $request->tempat_lahir,
+                                'tanggal_lahir' => $request->tanggal_lahir
+                            ]);
+                            return ['error' => false, 'message' => "Thank you, your biodata has been updated", 'user_type' => $request->user_type];
                         }
+                        return ['error' => true, 'message' => "Failed to update your profile", 'user_type' => $request->user_type];
 
-                        DB::table('tbl_students')->where('nisn', '=', $request->nisn)->update([
-                            'nama' => $request->nama,
-                            'alamat' => $request->alamat,
-                            'no_telp' => $request->no_telp,
-                            'tempat_lahir' => $request->tempat_lahir,
-                            'tanggal_lahir' => $request->tanggal_lahir,
-                            'profile_picture' => $filename_to_save
-                        ]);
-
-                        return ['error' => false, 'message' => "Thank you, your biodata has been updated", 'user_type' => $request->user_type];
                     }
                     break;
 

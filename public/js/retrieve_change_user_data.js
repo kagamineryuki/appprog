@@ -96,7 +96,7 @@ $(document).ready(function () {
     button_submit_kelas = $("#submit_kelas");
 
     button_retrieve_user.on("click", function () {
-        user_type = $(".user_type");
+        user_type = $("input[name='user_type']:checked");
         if (user_type.val().length != 0 && username.val().length != 0) {
             get_user_data(user_type.val(), username.val());
             console.log(user_type.val());
@@ -111,18 +111,38 @@ $(document).ready(function () {
         no_telp = $("#notelp");
         nama = $("#nama");
         alamat = $("#alamat");
+        user_type = $("input[name='user_type']:checked");
 
-        data = {
-            nisn: username.val(),
-            user_type: user_type.val(),
-            nama: nama.val(),
-            alamat: alamat.val(),
-            no_telp: no_telp.val(),
-            tempat_lahir: tempat_lahir.val(),
-            tanggal_lahir: tanggal_lahir.val()
-        };
-        console.log(data);
-        set_user_data(data);
+        switch (user_type.val()) {
+            case "student":
+                data = {
+                    nisn: username.val(),
+                    user_type: user_type.val(),
+                    nama: nama.val(),
+                    alamat: alamat.val(),
+                    no_telp: no_telp.val(),
+                    tempat_lahir: tempat_lahir.val(),
+                    tanggal_lahir: tanggal_lahir.val()
+                };
+
+                console.log(data);
+                set_user_data(data);
+                break;
+            case "teacher":
+                data = {
+                    nign: username.val(),
+                    user_type: user_type.val(),
+                    nama: nama.val(),
+                    alamat: alamat.val(),
+                    no_telp: no_telp.val(),
+                    tempat_lahir: tempat_lahir.val(),
+                    tanggal_lahir: tanggal_lahir.val()
+                };
+
+                console.log(data);
+                set_user_data(data);
+                break;
+        }
     });
 
     button_retrieve_pelajaran.on("click", function () {
@@ -178,7 +198,7 @@ $(document).ready(function () {
         switch (user_type) {
             case "student":
                 $.ajax({
-                    url: "http://absensi.test/api/retrieve_user_info",
+                    url: "/api/retrieve_user_info",
                     method: "POST",
                     dataType: "json",
                     data: {
@@ -194,7 +214,7 @@ $(document).ready(function () {
                             form.empty();
 
                             //name
-                            form.append("<div class=\"form-group mb-3\">" + "<label class=\"mr-3\"><strong>Name*</strong></label>" + "<input type=\"text\" class=\"form-control \" id=\"nama\"\n" + "value=" + data.nama + ">");
+                            form.append("<div class=\"form-group mb-3\">" + "<label class=\"mr-3\"><strong>Name*</strong></label>" + "<input type='text' class='form-control' id='nama' value=\"" + data.nama + " \" >");
                             //alamat
                             form.append("<div class=\"form-group mb-3\">" + "<label class=\"mr-3\"><strong>Alamat*</strong></label>" + "<input type=\"text\" class=\"form-control \" id=\"alamat\"\n" + "value=" + data.alamat + ">");
                             //tempat lahir
@@ -217,11 +237,41 @@ $(document).ready(function () {
                 break;
             case "teacher":
                 $.ajax({
-                    url: "",
+                    url: "/api/retrieve_user_info",
                     method: "POST",
                     dataType: "json",
-                    success: function success(data) {},
-                    error: function error(data, status) {}
+                    data: {
+                        user_type: user_type,
+                        nign: nisn
+                    },
+                    success: function success(data) {
+                        console.log(data);
+
+                        if ($.isEmptyObject(data)) {
+                            alert("Data not found !");
+                        } else {
+                            form.empty();
+
+                            //name
+                            form.append("<div class=\"form-group mb-3\">" + "<label class=\"mr-3\"><strong>Name*</strong></label>" + "<input type='text' class='form-control' id='nama' value=\"" + data.nama + " \" >");
+                            //alamat
+                            form.append("<div class=\"form-group mb-3\">" + "<label class=\"mr-3\"><strong>Alamat*</strong></label>" + "<input type=\"text\" class=\"form-control \" id=\"alamat\"\n" + "value=" + data.alamat + ">");
+                            //tempat lahir
+                            form.append("<div class=\"form-group mb-3\">" + "<label class=\"mr-3\"><strong>Tempat Lahir</strong></label>" + "<input type=\"text\" class=\"form-control \" id=\"tempat_lahir\"\n" + "value=" + data.tempat_lahir + ">");
+                            //tanggal lahir
+                            form.append("<div class=\"form-group mb-3\">" + "<label class=\"mr-3\"><strong>Tanggal Lahir</strong></label>" + "<input type=\"date\" class=\"form-control \" id=\"tgllahir\"\n" + "value=" + data.tanggal_lahir + ">");
+                            //notelp
+                            form.append("<div class=\"form-group mb-3\">" + "<label class=\"mr-3\"><strong>No. Telp</strong></label>" + "<input type=\"number\" class=\"form-control \" id=\"notelp\"\n" + "value=" + data.no_telp + ">");
+                            //user_type
+                            form.append("<input type='hidden' id ='user_type' value='" + user_type + "'>");
+
+                            button_submit_user.css('visibility', 'visible');
+                        }
+                    },
+                    error: function error(data, status) {
+                        console.log(data);
+                        console.log(status);
+                    }
                 });
                 break;
             case "admin":
@@ -237,7 +287,7 @@ $(document).ready(function () {
 
     function set_user_data(data) {
         $.ajax({
-            url: 'http://absensi.test/api/update_user_info',
+            url: '/api/update_user_info',
             method: 'POST',
             dataType: 'json',
             data: data,
@@ -263,7 +313,7 @@ $(document).ready(function () {
     //  function for request & change lesson data
     function get_lesson_data(data) {
         $.ajax({
-            url: "http://absensi.test/api/retrieve_pelajaran_info",
+            url: "/api/retrieve_pelajaran_info",
             method: "POST",
             dataType: "json",
             data: data,
@@ -293,7 +343,7 @@ $(document).ready(function () {
 
     function set_lesson_data(data) {
         $.ajax({
-            url: 'http://absensi.test/api/update_pelajaran_info',
+            url: '/api/update_pelajaran_info',
             method: 'POST',
             dataType: 'json',
             data: data,
@@ -319,7 +369,7 @@ $(document).ready(function () {
     //  function for request & change class data
     function get_class_data(data) {
         $.ajax({
-            url: "http://absensi.test/api/retrieve_kelas_info",
+            url: "/api/retrieve_kelas_info",
             method: "POST",
             dataType: "json",
             data: data,
@@ -349,7 +399,7 @@ $(document).ready(function () {
 
     function set_class_data(data) {
         $.ajax({
-            url: 'http://absensi.test/api/update_kelas_info',
+            url: '/api/update_kelas_info',
             method: 'POST',
             dataType: 'json',
             data: data,
