@@ -11,7 +11,7 @@
         <div class="container">
             <h1 class="display-4">About Me</h1>
             <hr>
-            <form method="POST" action="/api/update_user_info" enctype="multipart/form-data">
+            <form method="POST" action="/api/update_user_info_web" enctype="multipart/form-data">
                 <div class="d-flex">
                     <div class="container col-8">
                         {{csrf_field()}}

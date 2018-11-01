@@ -39,7 +39,6 @@ Route::middleware(['user_login:admin','web'])->group(function () {
     Route::get('/admin/admin_dashboard/change_user', array('uses' => 'admin@show_change_user_page'));
     Route::get('/admin/admin_dashboard/delete_user', array('uses' => 'admin@show_delete_user_page'));
     Route::get('/admin/admin_dashboard/logout', array('uses' => 'admin@do_logout'));
-
     Route::post('/admin/admin_dashboard/create_user/proceed/create_kelas', array('uses' => 'admin@do_create_kelas'));
     Route::post('/admin/admin_dashboard/create_user/proceed/create_user', array('uses' => 'admin@do_create_user'));
     Route::post('/admin/admin_dashboard/create_user/proceed/create_pelajaran', array('uses' => 'admin@do_create_pelajaran'));
@@ -51,6 +50,7 @@ Route::post('/student/get_nisn', array('uses'=>'api@give_info'))->middleware('we
 Route::post('/api/verify_user', array('uses'=>'api@verify_user'));
 Route::post('/api/retrieve_user_info', array('uses'=>'api@retrieve_user_info'));
 Route::post('/api/update_user_info', array('uses'=>'api@update_user_info'));
+Route::post('/api/update_user_info_web', array('uses'=>'api@update_user_info_web'));
 Route::post('/api/delete_user_info', array('uses'=>'api@delete_user_info'));
 
 //all attendance things

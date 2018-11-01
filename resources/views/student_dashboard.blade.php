@@ -25,7 +25,7 @@
         </form>
     </div>
     <hr>
-    <script src="{{asset('js/qrcode.js')}}"></script>
+    <script src="{{asset('/js/qrcode.js')}}"></script>
     {{--<script src="{{asset('js/app.js')}}"></script>--}}
 @endsection
 @endsection

@@ -162,6 +162,105 @@ class api extends Controller
         return redirect(view('admin.change_data'))->with(['error' => true, 'message' => "Something wrong happen"]);
     }
 
+    public function update_user_info_web(Request $request)
+    {
+
+        $rules = [
+            'nama' => 'required|Min:2',
+            'user_type' => 'required'
+        ];
+
+        $validator = Validator::make($request->all(), $rules);
+
+        if ($validator->fails()) {
+            return response()->json(['error' => true, 'message' => $validator->errors()]);
+        } else {
+            switch ($request->user_type) {
+                case "student":
+                    $rules = [
+                        'nisn' => 'required'
+                    ];
+
+                    $local_validator = Validator::make($request->all(), $rules);
+
+                    if ($local_validator->fails()) {
+                        return response()->json(['error' => true, 'message' => $local_validator->errors()]);
+                    } else {
+                        if ($request->hasFile('foto_profil')) {
+                            $file_fullname = $request->file('foto_profil')->getClientOriginalName();
+                            $filename = pathinfo($file_fullname, PATHINFO_FILENAME);
+                            $file_extension = $request->file('foto_profil')->getClientOriginalExtension();
+                            $filename_to_save = time() . '_' . $filename . '.' . $file_extension;
+                            $path = $request->file('foto_profil')->storeAs('public/uploads', $filename_to_save);
+
+                            DB::table('tbl_students')->where('nisn', '=', $request->nisn)->update([
+                                'nama' => $request->nama,
+                                'alamat' => $request->alamat,
+                                'no_telp' => $request->no_telp,
+                                'tempat_lahir' => $request->tempat_lahir,
+                                'tanggal_lahir' => $request->tanggal_lahir,
+                                'profile_picture' => $filename_to_save
+                            ]);
+                            return redirect('/student/student_dashboard/student_profile');
+
+                        } else {
+                            DB::table('tbl_students')->where('nisn', '=', $request->nisn)->update([
+                                'nama' => $request->nama,
+                                'alamat' => $request->alamat,
+                                'no_telp' => $request->no_telp,
+                                'tempat_lahir' => $request->tempat_lahir,
+                                'tanggal_lahir' => $request->tanggal_lahir
+                            ]);
+                            return redirect('/student/student_dashboard/student_profile');
+
+                        }
+                    }
+                    break;
+
+                case "teacher":
+                    $rules = [
+                        'nign' => 'required'
+                    ];
+
+                    $local_validator = Validator::make($request->all(), $rules);
+
+                    if ($local_validator->fails()) {
+                        return response()->json(['error' => true, 'message' => $local_validator->errors()]);
+                    } else {
+
+                        if ($request->hasFile('foto_profil')) {
+                            $file_fullname = $request->file('foto_profil')->getClientOriginalName();
+                            $filename = pathinfo($file_fullname, PATHINFO_FILENAME);
+                            $file_extension = $request->file('foto_profil')->getClientOriginalExtension();
+                            $filename_to_save = time() . '_' . $filename . '.' . $file_extension;
+                            $path = $request->file('foto_profil')->storeAs('public/uploads', $filename_to_save);
+
+                            DB::table('tbl_teachers')->where('nign', '=', $request->nign)->update([
+                                'nama' => $request->nama,
+                                'alamat' => $request->alamat,
+                                'no_telp' => $request->no_telp,
+                                'tempat_lahir' => $request->tempat_lahir,
+                                'tanggal_lahir' => $request->tanggal_lahir,
+                                'profile_picture' => $filename_to_save
+                            ]);
+                            return redirect('/teacher/teacher_dashboard');
+                        } else {
+                            DB::table('tbl_teachers')->where('nign', '=', $request->nign)->update([
+                                'nama' => $request->nama,
+                                'alamat' => $request->alamat,
+                                'no_telp' => $request->no_telp,
+                                'tempat_lahir' => $request->tempat_lahir,
+                                'tanggal_lahir' => $request->tanggal_lahir,
+                            ]);
+                            return redirect('/teacher/teacher_dashboard');
+                        }
+                    }
+                    break;
+            }
+        }
+        return redirect(view('admin.change_data'))->with(['error' => true, 'message' => "Something wrong happen"]);
+    }
+
     public function delete_user_info(Request $request)
     {
 

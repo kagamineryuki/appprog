@@ -28,20 +28,19 @@
 
 <div class="d-flex">
     <div class="bg-light align-items-stretch" id="sidebar">
-        <ul class="list-group">
-            <a href="/teacher/teacher_dashboard">
-                <li class="list-group-item {{Request::is('teacher/teacher_dashboard')? 'active' : '' }}">Dashboard</li>
+        <div class="list-group list-group-flush">
+            <a href="/teacher/teacher_dashboard"
+                class="list-group-item list-group-item-action {{Request::is('teacher/teacher_dashboard')? 'active' : '' }}">Dashboard
             </a>
 
-            <a href="/teacher/teacher_dashboard/generate_qr_code">
-                <li class="list-group-item {{Request::is('teacher/teacher_dashboard/generate_qr_code')? 'active' : '' }}">Generate QR Code</li>
+            <a href="/teacher/teacher_dashboard/generate_qr_code"
+                class="list-group-item list-group-item-action {{Request::is('teacher/teacher_dashboard/generate_qr_code')? 'active' : '' }}">Generate QR Code
             </a>
 
-            <a href="/teacher/teacher_dashboard/history">
-                <li class="list-group-item {{Request::is('teacher/teacher_dashboard/history')? 'active' : '' }}">History</li>
+            <a href="/teacher/teacher_dashboard/history" class="list-group-item list-group-item-action {{Request::is('teacher/teacher_dashboard/history')? 'active' : '' }}">History
             </a>
 
-        </ul>
+        </div>
     </div>
 
     @yield('content-div')

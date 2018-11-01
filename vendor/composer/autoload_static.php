@@ -395,6 +395,7 @@ class ComposerStaticInit7f212ae8bbf151cdcf1f8a826242a889
         'App\\tblPelajaran' => __DIR__ . '/../..' . '/app/tblPelajaran.php',
         'App\\tblStudent' => __DIR__ . '/../..' . '/app/tblStudent.php',
         'App\\tblTeacher' => __DIR__ . '/../..' . '/app/tblTeacher.php',
+        'App\\viewResult' => __DIR__ . '/../..' . '/app/viewResult.php',
         'BeyondCode\\DumpServer\\DumpServerCommand' => __DIR__ . '/..' . '/beyondcode/laravel-dump-server/src/DumpServerCommand.php',
         'BeyondCode\\DumpServer\\DumpServerServiceProvider' => __DIR__ . '/..' . '/beyondcode/laravel-dump-server/src/DumpServerServiceProvider.php',
         'BeyondCode\\DumpServer\\Dumper' => __DIR__ . '/..' . '/beyondcode/laravel-dump-server/src/Dumper.php',

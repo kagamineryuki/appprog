@@ -31,24 +31,24 @@
 
 <div class="d-flex">
     <div class="bg-light align-items-stretch" id="sidebar">
-        <ul class="list-group">
-            <a href="/admin/admin_dashboard">
-                <li class="list-group-item {{Request::is('admin/admin_dashboard')? 'active' : '' }}">Dashboard</li>
+        <div class="list-group list-group-flush">
+            <a href="/admin/admin_dashboard"
+                class="list-group-item list-group-item-action {{Request::is('admin/admin_dashboard')? 'active' : '' }}">Dashboard
             </a>
 
-            <a href="/admin/admin_dashboard/create_user">
-                <li class="list-group-item {{Request::is('admin/admin_dashboard/create_user')? 'active' : '' }}">Create Items
-                </li>
+            <a href="/admin/admin_dashboard/create_user"
+                class="list-group-item list-group-item-action {{Request::is('admin/admin_dashboard/create_user')? 'active' : '' }}">Create Items
+
             </a>
 
-            <a href="/admin/admin_dashboard/change_user">
-                <li class="list-group-item {{Request::is('admin/admin_dashboard/change_user')? 'active' : '' }}">Update Items</li>
+            <a href="/admin/admin_dashboard/change_user"
+                class="list-group-item list-group-item-action {{Request::is('admin/admin_dashboard/change_user')? 'active' : '' }}">Update Items
             </a>
-            <a href="/admin/admin_dashboard/delete_user">
-                <li class="list-group-item bg-danger text-light">Delete Items</li>
+            <a href="/admin/admin_dashboard/delete_user"
+                class="list-group-item list-group-item-action bg-danger text-light">Delete Items
             </a>
 
-        </ul>
+        </div>
     </div>
 
     @yield('content-div')

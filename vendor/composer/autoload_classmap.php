@@ -42,6 +42,7 @@ return array(
     'App\\tblPelajaran' => $baseDir . '/app/tblPelajaran.php',
     'App\\tblStudent' => $baseDir . '/app/tblStudent.php',
     'App\\tblTeacher' => $baseDir . '/app/tblTeacher.php',
+    'App\\viewResult' => $baseDir . '/app/viewResult.php',
     'BeyondCode\\DumpServer\\DumpServerCommand' => $vendorDir . '/beyondcode/laravel-dump-server/src/DumpServerCommand.php',
     'BeyondCode\\DumpServer\\DumpServerServiceProvider' => $vendorDir . '/beyondcode/laravel-dump-server/src/DumpServerServiceProvider.php',
     'BeyondCode\\DumpServer\\Dumper' => $vendorDir . '/beyondcode/laravel-dump-server/src/Dumper.php',

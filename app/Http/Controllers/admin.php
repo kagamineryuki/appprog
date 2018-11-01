@@ -222,7 +222,7 @@ class admin extends Controller
     public function do_create_pelajaran(Request $request)
     {
         $rules = [
-            'kode_pelajaran' => 'required',
+            'kode_pelajaran' => 'required|unique:tbl_pelajarans,kode_pelajaran',
             'nama_pelajaran' => 'required|min:3'
         ];
 
