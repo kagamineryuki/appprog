@@ -33,20 +33,20 @@
                 </select>
             </div>
             {{--Submit--}}
-            <input type="submit" class="btn btn-primary" value="Submit Query">
+            <input type="submit" class="btn btn-primary" value="Filter Result">
         </form>
         <hr>
         <table class="table table-striped table-bordered">
             <thead>
                 <tr>
                     <td>NISN</td>
-                    <td>NAMA MURID</td>
-                    <td>KELAS</td>
-                    <td>GURU PENGAMPU</td>
-                    <td>PELAJARAN</td>
-                    <td>REGISTERED AT</td>
-                    <td>VALID UNTIL</td>
-                    <td>STATUS</td>
+                    <td>Student</td>
+                    <td>Class</td>
+                    <td>Teacher</td>
+                    <td>Lesson</td>
+                    <td>Registered At</td>
+                    <td>Valid Until</td>
+                    <td>Status</td>
                 </tr>
             </thead>
             <tbody>
@@ -59,7 +59,7 @@
                     <td>{{$result->pelajaran}}</td>
                     <td>{{$result->registered_at}}</td>
                     <td>{{$result->valid_until}}</td>
-                    <td>{{$result->status_hadir}}</td>
+                    <td>{{strtoupper($result->status_hadir) }}</td>
                 </tr>
             @endforeach
             </tbody>

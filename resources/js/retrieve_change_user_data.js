@@ -145,25 +145,25 @@ $(document).ready(function () {
                             //alamat
                             form.append(
                                 "<div class=\"form-group mb-3\">" +
-                                "<label class=\"mr-3\"><strong>Alamat*</strong></label>" +
+                                "<label class=\"mr-3\"><strong>Address*</strong></label>" +
                                 "<input type=\"text\" class=\"form-control \" id=\"alamat\"\n" + "value=" + data.alamat + ">"
                             );
                             //tempat lahir
                             form.append(
                                 "<div class=\"form-group mb-3\">" +
-                                "<label class=\"mr-3\"><strong>Tempat Lahir</strong></label>" +
+                                "<label class=\"mr-3\"><strong>Birthplace</strong></label>" +
                                 "<input type=\"text\" class=\"form-control \" id=\"tempat_lahir\"\n" + "value=" + data.tempat_lahir + ">"
                             );
                             //tanggal lahir
                             form.append(
                                 "<div class=\"form-group mb-3\">" +
-                                "<label class=\"mr-3\"><strong>Tanggal Lahir</strong></label>" +
+                                "<label class=\"mr-3\"><strong>Birthdate</strong></label>" +
                                 "<input type=\"date\" class=\"form-control \" id=\"tgllahir\"\n" + "value=" + data.tanggal_lahir + ">"
                             );
                             //notelp
                             form.append(
                                 "<div class=\"form-group mb-3\">" +
-                                "<label class=\"mr-3\"><strong>No. Telp</strong></label>" +
+                                "<label class=\"mr-3\"><strong>Phone Number</strong></label>" +
                                 "<input type=\"number\" class=\"form-control \" id=\"notelp\"\n" + "value=" + data.no_telp + ">"
                             );
                             //user_type
@@ -202,31 +202,31 @@ $(document).ready(function () {
                             form.append(
                                 "<div class=\"form-group mb-3\">" +
                                 "<label class=\"mr-3\"><strong>Name*</strong></label>" +
-                                "<input type='text' class='form-control' id='nama' value=\""+ data.nama +" \" >"
+                                "<input type='text' class='form-control' id='nama' value='"+ data.nama +"'>"
                             );
                             //alamat
                             form.append(
                                 "<div class=\"form-group mb-3\">" +
-                                "<label class=\"mr-3\"><strong>Alamat*</strong></label>" +
-                                "<input type=\"text\" class=\"form-control \" id=\"alamat\"\n" + "value=" + data.alamat + ">"
+                                "<label class=\"mr-3\"><strong>Address*</strong></label>" +
+                                "<input type='text' class='form-control' id='alamat'" + "value=" + data.alamat + "'>"
                             );
                             //tempat lahir
                             form.append(
                                 "<div class=\"form-group mb-3\">" +
-                                "<label class=\"mr-3\"><strong>Tempat Lahir</strong></label>" +
-                                "<input type=\"text\" class=\"form-control \" id=\"tempat_lahir\"\n" + "value=" + data.tempat_lahir + ">"
+                                "<label class=\"mr-3\"><strong>Birthplace</strong></label>" +
+                                "<input type='text' class='form-control' id='tempat_lahir' value='" + data.tempat_lahir + "'>"
                             );
                             //tanggal lahir
                             form.append(
                                 "<div class=\"form-group mb-3\">" +
-                                "<label class=\"mr-3\"><strong>Tanggal Lahir</strong></label>" +
-                                "<input type=\"date\" class=\"form-control \" id=\"tgllahir\"\n" + "value=" + data.tanggal_lahir + ">"
+                                "<label class=\"mr-3\"><strong>Birthdate</strong></label>" +
+                                "<input type='date' class='form-control' id='tgllahir' value='" + data.tanggal_lahir + "'>"
                             );
                             //notelp
                             form.append(
                                 "<div class=\"form-group mb-3\">" +
-                                "<label class=\"mr-3\"><strong>No. Telp</strong></label>" +
-                                "<input type=\"number\" class=\"form-control \" id=\"notelp\"\n" + "value=" + data.no_telp + ">"
+                                "<label class=\"mr-3\"><strong>Phone Number</strong></label>" +
+                                "<input type='number' class='form-control' id='notelp' value=" + data.no_telp + "'>"
                             );
                             //user_type
                             form.append(
@@ -303,8 +303,8 @@ $(document).ready(function () {
                         //nama pelajaran
                         form_pelajaran.append(
                             "<div class=\"form-group mb-3\">" +
-                            "<label class=\"mr-3\"><strong>Nama Pelajaran</strong></label>" +
-                            "<input type=\"text\" class=\"form-control \" id=\"nama_pelajaran\"\n" + "value=" + value.nama_pelajaran + ">"
+                            "<label class=\"mr-3\"><strong>Lesson Name</strong></label>" +
+                            "<input type='text' class='form-control' id='nama_pelajaran' value='" + value.nama_pelajaran + "'>"
                         );
                     })
 
@@ -364,8 +364,8 @@ $(document).ready(function () {
                         //nama pelajaran
                         form_kelas.append(
                             "<div class=\"form-group mb-3\">" +
-                            "<label class=\"mr-3\"><strong>Nama Kelas</strong></label>" +
-                            "<input type=\"text\" class=\"form-control \" id=\"nama_kelas\"\n" + "value=" + value.nama_kelas + ">"
+                            "<label class=\"mr-3\"><strong>Class Name</strong></label>" +
+                            "<input type='text' class='form-control' id='nama_kelas' value='" + value.nama_kelas + "'>"
                         );
                     })
 

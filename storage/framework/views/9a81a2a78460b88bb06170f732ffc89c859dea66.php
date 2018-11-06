@@ -1,16 +1,13 @@
-@extends('template')
-@extends('admin.dashboard_template')
+<?php $__env->startSection('header'); ?>
+    <link rel="stylesheet" type="text/css" href="<?php echo e(asset("css/app.css")); ?>">
+<?php $__env->stopSection(); ?>
 
-@section('header')
-    <link rel="stylesheet" type="text/css" href="{{asset("css/app.css")}}">
-@endsection
-
-@section('content')
-@section('content-div')
+<?php $__env->startSection('content'); ?>
+<?php $__env->startSection('content-div'); ?>
     <div class="bg-white container-fluid align-items-stretch p-4" id="contents-dashboard">
         <h1 class="display-4">Delete Data</h1>
         <hr>
-        {{--user--}}
+        
         <div class="d-flex">
             <div class="container">
                 <h1 class="display-4">User</h1>
@@ -38,7 +35,7 @@
             </div>
         </div>
 
-        {{--lesson--}}
+        
         <div class="d-flex">
             <div class="container">
                 <h1 class="display-4">Pelajaran</h1>
@@ -59,7 +56,7 @@
             </div>
         </div>
 
-        {{--Class--}}
+        
         <div class="d-flex">
             <div class="container">
                 <h1 class="display-4">Kelas</h1>
@@ -81,6 +78,8 @@
         </div>
 
     </div>
-    <script src="{{asset('js/retrieve_delete_user_data.js')}}"></script>
-@endsection
-@endsection
+    <script src="<?php echo e(asset('js/retrieve_delete_user_data.js')); ?>"></script>
+<?php $__env->stopSection(); ?>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('admin.dashboard_template', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php echo $__env->make('template', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>

@@ -28,7 +28,7 @@
                             </div>
 
                             <div class="form-group mb-3 col-10">
-                                <label class="mr-3"><strong>Nama*</strong></label>
+                                <label class="mr-3"><strong>Name*</strong></label>
                                 <input type="text" class="form-control " value="{{$nama}}" name="nama">
                                 <div class="invalid-feedback">
                                     @if($errors->has('nama'))
@@ -39,7 +39,7 @@
                         </div>
 
                         <div class="form-group mb-3">
-                            <label class="mr-3"><strong>Alamat</strong></label>
+                            <label class="mr-3"><strong>Address</strong></label>
                             <input type="text" class="form-control " value="{{$alamat}}" name="alamat">
                             <div class="invalid-feedback">
                                 @if($errors->has('alamat'))
@@ -50,7 +50,7 @@
 
                         <div class="form-row">
                             <div class="form-group mb-3 col-2">
-                                <label class="mr-3"><strong>Tempat Lahir</strong></label>
+                                <label class="mr-3"><strong>Birthplace</strong></label>
                                 <input type="text" class="form-control" value="{{$tempat_lahir}}" name="tempat_lahir">
                                 <div class="invalid-feedback">
                                     @if($errors->has('tempat_lahir'))
@@ -60,7 +60,7 @@
                             </div>
 
                             <div class="form-group mb-3 col-10">
-                                <label class="mr-3"><strong>Tanggal Lahir</strong></label>
+                                <label class="mr-3"><strong>Birthdate</strong></label>
                                 <input type="date" class="form-control" value="{{$tanggal_lahir}}" name="tanggal_lahir">
                                 <div class="invalid-feedback">
                                     @if($errors->has('tgllahir'))
@@ -71,7 +71,7 @@
                         </div>
 
                         <div class="form-group mb-3">
-                            <label class="mr-3"><strong>No. Telp</strong></label>
+                            <label class="mr-3"><strong>Phone Number</strong></label>
                             <input type="number" class="form-control" value="{{$no_telp}}" name="no_telp">
                             <div class="invalid-feedback">
                                 @if($errors->has('notelp'))
@@ -82,14 +82,14 @@
 
                         <input type="hidden" name="user_type" value="student">
 
-                        <input type="submit" class="btn btn-primary">
+                        <input type="submit" class="btn btn-primary" value="Update Profile">
 
                     </div>
                     <div class="container col-4">
                         <div class="form-group mb-3">
-                            <label class="mr-3"><strong>Foto Profil</strong></label>
+                            <label class="mr-3"><strong>Profile Picture</strong></label>
                             <br>
-                            <img src="/storage/uploads/{{$profile_picture}}" class="rounded-circle mb-2 border" style="width:100px">
+                            <img src="{{asset('storage/uploads/'.$profile_picture)}}" class="rounded-circle mb-2 border" style="width:100px">
                             <input type="file" class="form-control-file" name="foto_profil">
                             <div class="invalid-feedback">
                                 @if($errors->has('foto_profil'))

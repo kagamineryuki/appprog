@@ -34,7 +34,7 @@
                         <input type="checkbox" class="form-check-input" name="remember">
                         <label class="text-light"><strong>Remember Me</strong></label>
                     </div>
-                    <input type="submit" class="btn btn-primary flex-fill">
+                    <input type="submit" class="btn btn-primary flex-fill" value="Login">
                 </div>
             </form>
         </div>

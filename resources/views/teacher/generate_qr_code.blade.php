@@ -15,7 +15,7 @@
                 {{csrf_field()}}
                 <div class="form-row">
                     <div class="col">
-                        <label>Kelas</label>
+                        <label>Class</label>
                         <select class="form-control is-invalid" name="kelas">
                             @foreach($kelas as $per_kelas)
                                 <option value="{{$per_kelas->kode_kelas}}">{{$per_kelas->kode_kelas}}
@@ -30,7 +30,7 @@
                     </div>
 
                     <div class="col">
-                        <label>Pelajaran</label>
+                        <label>Lesson</label>
                         <select class="form-control is-invalid" name="pelajaran">
                             @foreach($pelajaran as $per_pelajaran)
                                 <option value="{{$per_pelajaran->kode_pelajaran}}">{{$per_pelajaran->kode_pelajaran}}
@@ -55,10 +55,10 @@
                         </div>
                     </div>
                 </div>
-                <input type="submit" class="btn btn-primary mt-3">
+                <input type="submit" class="btn btn-primary mt-3" value="Create QR">
             </form>
             <hr>
-            <h1 class="display-4 m-0">Kode QR</h1>
+            <h1 class="display-4 m-0">QR Code</h1>
 
             <div class="container d-flex m-0 align-content-center justify-content-center">
                 @if(!empty($qr_code))

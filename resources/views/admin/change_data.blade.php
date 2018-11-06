@@ -33,7 +33,7 @@
                 <div id = "form-change">
 
                 </div>
-                <button class='btn btn-primary mb-3' id ='submit_user' style="visibility: hidden;">Submit</button>
+                <button class='btn btn-primary mb-3' id ='submit_user' style="visibility: hidden;">Change Data</button>
 
                 {{--<form method="POST" action="/api/update_user_info" id="form" enctype="multipart/form-data">--}}
                     {{--{{csrf_field()}}--}}
@@ -44,9 +44,9 @@
         {{--lesson--}}
         <div class="d-flex">
             <div class="container">
-                <h1 class="display-4">Pelajaran</h1>
+                <h1 class="display-4">Lesson</h1>
                 <div class="form-group mb-3">
-                    <label class="mr-3"><strong>Kode Pelajaran</strong></label>
+                    <label class="mr-3"><strong>Lesson Code</strong></label>
                     <input type="text" class="form-control " name="no_pelajaran" id="no_pelajaran">
                 </div>
 
@@ -57,7 +57,7 @@
                 <div id = "form-pelajaran">
 
                 </div>
-                <button class='btn btn-primary mb-3' id ='submit_pelajaran' style="visibility: hidden;">Submit</button>
+                <button class='btn btn-primary mb-3' id ='submit_pelajaran' style="visibility: hidden;">Change Data</button>
 
                 {{--<form method="POST" action="/api/update_user_info" id="form" enctype="multipart/form-data">--}}
                 {{--{{csrf_field()}}--}}
@@ -68,9 +68,9 @@
         {{--Class--}}
         <div class="d-flex">
             <div class="container">
-                <h1 class="display-4">Kelas</h1>
+                <h1 class="display-4">Class</h1>
                 <div class="form-group mb-3">
-                    <label class="mr-3"><strong>Kode Kelas</strong></label>
+                    <label class="mr-3"><strong>Class Code</strong></label>
                     <input type="text" class="form-control " name="kode_kelas" id="kode_kelas">
                 </div>
 
@@ -81,7 +81,7 @@
                 <div id = "form-kelas">
 
                 </div>
-                <button class='btn btn-primary mb-3' id ='submit_kelas' style="visibility: hidden;">Submit</button>
+                <button class='btn btn-primary mb-3' id ='submit_kelas' style="visibility: hidden;">Change Data</button>
 
                 {{--<form method="POST" action="/api/update_user_info" id="form" enctype="multipart/form-data">--}}
                 {{--{{csrf_field()}}--}}

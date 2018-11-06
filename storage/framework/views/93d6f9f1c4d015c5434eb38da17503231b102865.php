@@ -1,32 +1,32 @@
-@extends('template')
-@extends('welcome_css')
+<?php $__env->startSection('header'); ?>
+    <link rel="stylesheet" type="text/css" href="<?php echo e(asset("css/app.css")); ?>">
+<?php $__env->stopSection(); ?>
 
-@section('header')
-    <link rel="stylesheet" type="text/css" href="{{asset("css/app.css")}}">
-@endsection
-
-@section('content')
+<?php $__env->startSection('content'); ?>
     <div id="welcome-bg" class="d-flex justify-content-center align-items-center">
         <div>
-            <h1 class="display-3 text-light">{{config('app.name')}}</h1>
+            <h1 class="display-3 text-light"><?php echo e(config('app.name')); ?></h1>
 
             <form method="POST" action="./login">
-                {{csrf_field()}}
+                <?php echo e(csrf_field()); ?>
+
 
                 <div class="form-group mb-3">
-                    <input type="text" name="username" class="form-control form-control-lg mb-1 is-invalid" placeholder="Username" value="{{old('username')}}">
-                    @if($errors->has('username'))
+                    <input type="text" name="username" class="form-control form-control-lg mb-1 is-invalid" placeholder="Username" value="<?php echo e(old('username')); ?>">
+                    <?php if($errors->has('username')): ?>
                         <div class="invalid-feedback mb-3">
-                            {{ $errors->first('username') }}
+                            <?php echo e($errors->first('username')); ?>
+
                         </div>
-                    @endif
+                    <?php endif; ?>
 
                     <input type="password" name="password" class="form-control form-control-lg mb-1 is-invalid" placeholder="Password" >
-                    @if($errors->has('password'))
+                    <?php if($errors->has('password')): ?>
                         <div class="invalid-feedback mb-3">
-                            {{ $errors->first('password') }}
+                            <?php echo e($errors->first('password')); ?>
+
                         </div>
-                    @endif
+                    <?php endif; ?>
                 </div>
 
                 <div class="form-inline d-flex justify-content-around mb-3">
@@ -50,4 +50,7 @@
             </form>
         </div>
     </div>
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('welcome_css', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php echo $__env->make('template', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>

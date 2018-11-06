@@ -1,12 +1,9 @@
-@extends('template')
-@extends('admin.dashboard_template')
+<?php $__env->startSection('header'); ?>
+    <link rel="stylesheet" type="text/css" href="<?php echo e(asset("css/app.css")); ?>">
+<?php $__env->stopSection(); ?>
 
-@section('header')
-    <link rel="stylesheet" type="text/css" href="{{asset("css/app.css")}}">
-@endsection
-
-@section('content')
-@section('content-div')
+<?php $__env->startSection('content'); ?>
+<?php $__env->startSection('content-div'); ?>
 
     <div class="bg-white container-fluid align-items-stretch p-4" id="contents-dashboard">
         <h1 class="display-4">All Available Data</h1>
@@ -22,12 +19,12 @@
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($students as $student)
+                    <?php $__currentLoopData = $students; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $student): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <tr>
-                            <td>{{$student->nisn}}</td>
-                            <td>{{$student->nama}}</td>
+                            <td><?php echo e($student->nisn); ?></td>
+                            <td><?php echo e($student->nama); ?></td>
                         </tr>
-                    @endforeach
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     </tbody>
                 </table>
             </div>
@@ -41,12 +38,12 @@
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($teachers as $teacher)
+                    <?php $__currentLoopData = $teachers; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $teacher): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <tr>
-                            <td>{{$teacher->nign}}</td>
-                            <td>{{$teacher->nama}}</td>
+                            <td><?php echo e($teacher->nign); ?></td>
+                            <td><?php echo e($teacher->nama); ?></td>
                         </tr>
-                    @endforeach
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     </tbody>
                 </table>
             </div>
@@ -61,12 +58,12 @@
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($pelajaran as $pelajaran)
+                    <?php $__currentLoopData = $pelajaran; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $pelajaran): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <tr>
-                            <td>{{$pelajaran->kode_pelajaran}}</td>
-                            <td>{{$pelajaran->nama_pelajaran}}</td>
+                            <td><?php echo e($pelajaran->kode_pelajaran); ?></td>
+                            <td><?php echo e($pelajaran->nama_pelajaran); ?></td>
                         </tr>
-                    @endforeach
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     </tbody>
                 </table>
             </div>
@@ -81,12 +78,12 @@
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($kelas as $kelas)
+                    <?php $__currentLoopData = $kelas; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $kelas): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <tr>
-                            <td>{{$kelas->kode_kelas}}</td>
-                            <td>{{$kelas->nama_kelas}}</td>
+                            <td><?php echo e($kelas->kode_kelas); ?></td>
+                            <td><?php echo e($kelas->nama_kelas); ?></td>
                         </tr>
-                    @endforeach
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     </tbody>
                 </table>
             </div>
@@ -94,5 +91,7 @@
         </div>
     </div>
 
-@endsection
-@endsection
+<?php $__env->stopSection(); ?>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('admin.dashboard_template', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php echo $__env->make('template', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
